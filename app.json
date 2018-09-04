@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "view/index/index",
+    "view/result/result",
+    "view/Error/error"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "正迪防伪溯源",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}

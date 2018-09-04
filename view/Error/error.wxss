@@ -1,0 +1,48 @@
+/* view/Error/error.wxss */
+
+.header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2147483647;
+}
+
+.header:after {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 20rpx solid #075FA9;
+  color: #d9d9d9;
+}
+
+.header-line-after {
+  width: 100%;
+  margin-top:20rpx;
+  z-index: 2147483647;
+  height:1rpx;
+  background-color:#d9d9d9;
+}
+
+.title{
+  font-size: 45rpx;
+  text-align: center;
+  margin-top: 35rpx;
+  margin-bottom: 10rpx;
+  color: #075FA9;
+  
+}
+
+.footer-line {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:50rpx;
+  background-color: #323232;
+  text-align: center;
+  font-size: 23rpx;
+  color: white;
+  line-height:200%;
+}

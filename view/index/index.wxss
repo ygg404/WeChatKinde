@@ -1,0 +1,282 @@
+
+
+.header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2147483647;
+}
+
+.header:after {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 20rpx solid #075FA9;
+  color: #d9d9d9;
+}
+
+.title{
+  font-size: 45rpx;
+  text-align: center;
+  margin-top: 35rpx;
+  margin-bottom: 10rpx;
+  color: #075FA9;
+  
+}
+
+.scanCode{
+  /* border: 1px solid #ffd0d0;  
+  border-radius: 10rpx;    */
+  width: 11%;
+  height: 76%;
+  margin-top: -11%; 
+  margin-left: 86%;
+  position: center;
+}
+
+/* 查询栏 */
+.search{  
+  width: 79%;  
+  height:40px
+}  
+.search_arr {  
+  border: 1px solid #d0d0d0;  
+  margin-left: 15rpx;  
+  height:40px
+}  
+.search_arr input{  
+  margin-left: 20rpx;  
+  height: 80rpx;  
+  
+}  
+.bc_text {  
+  line-height: 70rpx;  
+  height: 70rpx;  
+  margin-top: 34rpx;  
+}  
+  
+.sousuo {  
+  margin-left: -10rpx;  
+  width: 21%;  
+  line-height: 225%;  
+  text-align: center;  
+  background: #0657A9;
+  border-radius: 0;
+  color: white;
+}  
+.page_row{  
+  display: flex;  
+  flex-direction: row; 
+  height:42px
+}  
+.searchcion {  
+  margin: 10rpx 20rpx 10rpx 10rpx;  
+  position: absolute;  
+  right:170rpx;  
+  z-index: 2;  
+  width: 31px;  
+  height: 30px;  
+  text-align: center;  
+  border-radius: 0px;
+}  
+
+button::after {
+    border-radius: 0;
+}
+
+/* 类目 */
+.index-category {
+  margin-top: 10rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.index-category-item {
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 25rpx;
+  padding-top: 20rpx;
+  padding-bottom: 8px;
+}
+
+.index-category-item-icon {
+  position: relative;
+  margin-left: -75rpx;
+  margin-bottom: 0px;
+  left: 50%;
+  width: 150rpx;
+  height: 140rpx;
+  border-radius: 90%;
+  background: #000;
+}
+
+.index-category-item-icon-image {
+  /* margin-top: 5rpx; */
+  width: 150rpx;
+  height: 140rpx;
+}
+
+/* 优秀案例 */
+.index-cases {
+  margin-top: 20rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.index-cases-item {
+  float: left;
+  width: 50%;
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 8px;
+}
+
+.index-cases-item-icon {
+  position: relative;
+  margin-left: -50%; 
+  margin-bottom: 0px;
+  left: 50%;
+  width: 100%;
+  height: 240rpx;
+  background: #000;
+}
+
+.index-cases-item-icon-image {
+  /* margin-top: 5rpx; */
+  width: 90%;
+  height: 240rpx;
+}
+
+/* 新闻资讯 */
+.index-news{
+  margin-top: 15rpx;
+  overflow: hidden;
+}
+
+.index-news-title{
+  font-size: 38rpx;
+  height: 100rpx;
+  background-color: #E6E6E6;
+  display: flex;  
+  flex-direction: row; 
+  
+}
+.index-news-title-timg {
+  margin-top:15rpx;
+  margin-left: 10rpx; 
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.index-news-title text {
+  margin-left: 10rpx;
+  margin-bottom:10rpx; 
+  line-height: 220%;
+  font-size: 46rpx;
+  font-family: '黑体','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.index-news-title-nimg{
+  margin-top:15rpx;
+  margin-left: 52%; 
+  width: 70rpx;
+  height: 70rpx;
+}
+
+
+.index-news-item{
+  /* height: 200rpx; */
+  border-bottom: 1rpx solid #bcbcbc;
+  padding-top: 0rpx;
+}
+
+.index-news-himg{
+  margin-top:20rpx;
+  margin-left: 10rpx; 
+  width: 50rpx;
+  height: 50rpx;
+}
+.index-news-header{
+  display: flex;  
+  flex-direction: row; 
+  font-size: 30rpx;
+}
+.index-news-date{
+  font-size: 28rpx;
+  color: #bcbcbc;
+  margin-top:25rpx;
+  margin-left: 10%;
+}
+
+/* 视频 */
+.index-video
+{
+  z-index:-1;
+  margin-top:6rpx;
+}
+
+/* 合作伙伴 */
+.index-partners{
+  overflow: hidden;
+  background: #fff;
+  margin-top:20rpx;
+}
+
+.index-partners-title{
+  width:100%;
+  height:75rpx;
+  background: #0657A9;
+  font-size: 40rpx;
+  color:white;
+  text-align: left;
+  line-height: 150%;
+}
+
+.index-partners-pre{
+  position:absolute;
+  width:80rpx;
+  height:80rpx;
+  margin-top:160rpx;
+  margin-left:3%;
+}
+
+.index-partners-next{
+  position:absolute;
+  width:80rpx;
+  height:80rpx;
+  margin-top:160rpx;
+  margin-left:86%;
+}
+
+
+/* 底部 */
+.index-footer{
+  margin-top: 20rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.index-footer-top{
+  line-height: 180%;
+  text-align: right;
+  color: white;
+  width: 100%;
+  height: 75rpx;
+  background-color: #075FA9;
+  
+}
+
+.index-footer-version{
+  /* margin-top: 50rpx; */
+  color: white;
+  height:220rpx;
+  background-color: #323232;
+  text-align: center;
+  font-size: 23rpx;
+}

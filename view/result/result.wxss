@@ -1,0 +1,83 @@
+/* view/result/result.wxss */
+@import "/lib/wxParse/wxParse.wxss";
+
+.header-line {
+  width: 100%;
+  z-index: 2147483647;
+  height:20rpx;
+  background-color:#075FA9;
+}
+
+.header-line-after {
+  width: 100%;
+  margin-top:20rpx;
+  z-index: 2147483647;
+  height:1rpx;
+  background-color:#d9d9d9;
+}
+
+.title{
+  font-size: 45rpx;
+  text-align: center;
+  margin-top: 25rpx;
+  margin-bottom: 10rpx;
+  color: #075FA9;
+  
+}
+
+.result-container{
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.item-middle
+{
+  flex:1;
+  margin-left:0px;
+  padding-top: 5px;  
+}
+
+.imageStyle{
+  display: flex; 
+   /* margin: 10rpx 20rpx 10rpx 10rpx;  */
+  /* position: center; */
+  /* width:90%; */
+  width:100%;
+ align-items:center;
+   /* height:60vh;  */
+}
+
+.textLabel{
+  
+  margin-left: 20%;
+  font-size: 15pt; 
+  color: black;
+}
+
+.FtimeLabel{
+  
+  margin-left: 5%;
+  font-size: 15pt;
+  color: black;
+}
+
+.descripLabel{
+  font-size: 13pt;
+  margin-left: 2%;
+  width: 96%;
+  text-indent: 60rpx;
+  /* text-align: left; */
+}
+
+.footer-line {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:50rpx;
+  background-color: #323232;
+  text-align: center;
+  font-size: 23rpx;
+  color: white;
+  line-height:200%;
+}
