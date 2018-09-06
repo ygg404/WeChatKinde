@@ -1,12 +1,11 @@
 
 
 .header {
-  position: absolute;
+  /* position: absolute; */
   top: 0px;
   width: 100%;
   z-index: 2147483647;
 }
-
 .header:after {
   content: " ";
   position: absolute;
@@ -151,7 +150,9 @@ button::after {
   width: 90%;
   height: 240rpx;
 }
-
+.newlb{
+  margin-top: 80rpx;
+}
 /* 新闻资讯 */
 .index-news{
   margin-top: 15rpx;
@@ -223,9 +224,10 @@ button::after {
 
 /* 合作伙伴 */
 .index-partners{
+  margin-top: 50rpx;
   overflow: hidden;
   background: #fff;
-  margin-top:20rpx;
+  
 }
 
 .index-partners-title{
@@ -279,4 +281,68 @@ button::after {
   background-color: #323232;
   text-align: center;
   font-size: 23rpx;
+}
+
+
+/*左侧菜单*/
+.btn {
+  height: 64rpx;
+  width: 65rpx;
+  padding: 20rpx 0;
+  border-radius: 0rpx 20rpx 20rpx 0rpx;
+  text-align: center;
+  background-color: #0657a9;
+  color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 220px;
+}
+.btn image{
+  height: 56rpx;
+  width: 40rpx;
+}
+/*mask*/
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+/*content*/
+.drawer_attr_box {
+  width: 60%;
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  top: 0rpx;
+  left: 0;
+  z-index: 1001;
+  background: #fff;
+}
+.drawer_content {
+  
+  height: 100%;
+
+  
+}
+.drawer_title{
+  padding:20rpx;
+  font:43rpx "微软雅黑";
+  text-align: left;
+  line-height: 100rpx;
+  display:flex;
+		flex-direction:row;
+    align-items: center;
+    color: #666;
+}
+.line image{
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+  width:70rpx;
+  height: 70rpx;
 }

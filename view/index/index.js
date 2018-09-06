@@ -1,15 +1,16 @@
 // view/index/index.js
 var xmlParser = require("../../lib/xmldom/dom-parser.js");
-var MD5 = require('../../lib/md5.js'); 
+var MD5 = require('../../lib/md5.js');
 var Base64Parse = require('../../lib/Base64.js');
-
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    numQuery:'',
-    btnDisable:false,
+    showModalStatus: false,
+    showvideo: true,
+    numQuery: '',
+    btnDisable: false,
     numStorage: '', //用户输入的防伪码存储值
     //Toekn用户名密钥
     staffId: 'kinde_mini',
@@ -19,17 +20,17 @@ Page({
       scroll_top: 0,
       goTop_show: false
     },
-    isScan:false,
+    isScan: false,
     //轮播
     banner_list: [{
-        banner_id: 0,
-        banner_image: '../../image/k1.jpg'
+      banner_id: 0,
+      banner_image: '../../image/k1.jpg'
     }, {
-        banner_id: 1,
-        banner_image: '../../image/k2.jpg'
+      banner_id: 1,
+      banner_image: '../../image/k2.jpg'
     }, {
-        banner_id: 2,
-        banner_image: '../../image/k3.jpg'
+      banner_id: 2,
+      banner_image: '../../image/k3.jpg'
     }],
     //类目
     category_list: [{
@@ -54,21 +55,21 @@ Page({
       category_image: '../../image/lx.png'
     }],
     //案例
-    cases_list:[{
-      cases_id:'1',
-      cases_name:'绿箭成功案例',
-      cases_color:'#FFFFFF',
+    cases_list: [{
+      cases_id: '1',
+      cases_name: '绿箭成功案例',
+      cases_color: '#FFFFFF',
       cases_image: '../../image/case.jpg'
     }, {
       cases_id: '2',
       cases_name: '绿箭成功案例',
       cases_color: '#FFFFFF',
       cases_image: '../../image/case.jpg'
-      }, {
-        cases_id: '3',
-        cases_name: '绿箭成功案例',
-        cases_color: '#FFFFFF',
-        cases_image: '../../image/case.jpg'
+    }, {
+      cases_id: '3',
+      cases_name: '绿箭成功案例',
+      cases_color: '#FFFFFF',
+      cases_image: '../../image/case.jpg'
     }, {
       cases_id: '4',
       cases_name: '绿箭成功案例',
@@ -78,7 +79,7 @@ Page({
     loadingHidden: true,
     //合作伙伴
     currentTab: 0,
-    currentTabNum:0,
+    currentTabNum: 0,
     partner_list: [{
       partner_id: 0,
       partner_image: '../../image/partner1.png'
@@ -90,10 +91,10 @@ Page({
       partner_image: '../../image/partner3.png'
     }],
     //新闻栏
-    news_list:[{
-      news_id : 0,
+    news_list: [{
+      news_id: 0,
       news_title: '热烈祝贺正迪被授予“专利创新先进单位”称号',
-      news_date:'2017/10/16'
+      news_date: '2017/10/16'
     }, {
       news_id: 1,
       news_title: '秋高气爽迎国庆，花好月圆迎中秋',
@@ -128,28 +129,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
@@ -157,7 +158,7 @@ Page({
    */
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading() //在标题栏中显示加载
-    var that =this;
+    var that = this;
     //模拟加载
     setTimeout(function () {
       // complete
@@ -176,30 +177,29 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   /**
    * 查询按钮
    */
-  queryBtnTap: function(e){
+  queryBtnTap: function (e) {
 
-    if(this.data.numQuery=='')
-    {
+    if (this.data.numQuery == '') {
       return;
     }
 
     this.setData({
       btnDisable: true
     });
-   // var that = this;
+    // var that = this;
     this.getToken(this);
   },
 
@@ -207,8 +207,7 @@ Page({
   * 获取Token
   */
   getToken: function (that) {
-    if (that.data.isScan == false)
-    {
+    if (that.data.isScan == false) {
       //防伪码必须是14位 20位
       if ((that.data.numQuery.length != 14) && (that.data.numQuery.length != 20)) {
         console.log("len:" + that.data.numQuery.length);
@@ -231,11 +230,11 @@ Page({
         return;
       }
     }
-    
-    
+
+
     that.setData({
       loadingHidden: false,
-      isScan:false
+      isScan: false
     });
     wx.request({
       url: 'https://mini.kd315.net/api/Security/GetToken?staffId=' + this.data.staffId,
@@ -273,19 +272,19 @@ Page({
   },
 
   getSign: function (signToken, timestamp, nonce, staffid, data, appSecret) {
-      console.log("timestamp:" + timestamp);
-      console.log("nonce:" + nonce);
-      console.log("staffid:" + staffid);
-      console.log("signToken:" + signToken);
-      console.log("data:" + data);
-      console.log("appSecret:" + appSecret);
-      var signStr = "" + timestamp + nonce + staffid + signToken + data + appSecret;
-      console.log("signStr:" + signStr);
-      var signString = MD5.md5(signStr);
-      signString = signString.toUpperCase();
-      console.log('signString:' + signString);
-      return signString;
-    },
+    console.log("timestamp:" + timestamp);
+    console.log("nonce:" + nonce);
+    console.log("staffid:" + staffid);
+    console.log("signToken:" + signToken);
+    console.log("data:" + data);
+    console.log("appSecret:" + appSecret);
+    var signStr = "" + timestamp + nonce + staffid + signToken + data + appSecret;
+    console.log("signStr:" + signStr);
+    var signString = MD5.md5(signStr);
+    signString = signString.toUpperCase();
+    console.log('signString:' + signString);
+    return signString;
+  },
 
   getImageInfo: function (that, signToken) {
     var staffid = that.data.staffId;
@@ -309,7 +308,7 @@ Page({
       },
 
       success: function (res) {
-        
+
         console.log(res.data);
 
         var eCount = res.data["Count"];
@@ -338,8 +337,8 @@ Page({
         }
         else {
           wx.navigateTo({
-            url: '../result/result?imageBase64Data=' + eImage + 
-            '&ImageHeight=' + eImgHeight + '&ImageZoom=' + eImgZoom 
+            url: '../result/result?imageBase64Data=' + eImage +
+            '&ImageHeight=' + eImgHeight + '&ImageZoom=' + eImgZoom
             + '&Description=' + Base64Parse.Base64.encode(eDescription)
             + '&IsAuto=' + eIsAuto + '&Result=' + eResult
             // +'&queryCount=' + eCount
@@ -372,7 +371,7 @@ Page({
   /*
   *获取防伪码
   */
-  numInput:function(e){
+  numInput: function (e) {
     this.setData({
       numQuery: e.detail.value
     });
@@ -381,7 +380,7 @@ Page({
 
   recognizeCode: function () {
     //小程序API
-    var that =this;
+    var that = this;
     wx.scanCode({
       //扫描条形码ISBN
       success: function (res) {
@@ -391,7 +390,7 @@ Page({
 
         that.setData({
           numQuery: scanCode,
-          isScan:true
+          isScan: true
         });
         that.setData({
           btnDisable: true
@@ -418,21 +417,20 @@ Page({
   bindChange: function (e) {
     var that = this;
     that.setData({ currentTabNum: e.detail.current });
-   // console.log(e.detail.current);
+    // console.log(e.detail.current);
   },
   /*** 点击上图切换***/
   preNav: function (e) {
     var that = this;
     var currentTabNum = that.data.currentTabNum;
-    if (currentTabNum==0)
-    {
+    if (currentTabNum == 0) {
       that.setData({
         currentTab: 2
       });
     }
-    else{
+    else {
       that.setData({
-        currentTab: currentTabNum-1
+        currentTab: currentTabNum - 1
       });
     }
   },
@@ -454,7 +452,7 @@ Page({
 
   // 回到顶部
   scrollTopFun: function (e) {
-    this.setData({ });
+    this.setData({});
     //console.log(e.detail);
     // if (e.detail.scrollTop > 300) {//触发gotop的显示条件  
     //   this.setData({
@@ -479,5 +477,63 @@ Page({
     });
     // console.log("----");
     // console.log(this.data.scrollTop)
-  }  
+  },
+
+  //左侧菜单
+  powerDrawer: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+  },
+  util: function (currentStatu) {
+    /* 动画部分 */
+    // 第1步：创建动画实例 
+    var animation = wx.createAnimation({
+      duration: 200,  //动画时长
+      timingFunction: "linear", //线性
+      delay: 0  //0则不延迟
+    });
+
+    // 第2步：这个动画实例赋给当前的动画实例
+    this.animation = animation;
+
+    // 第3步：执行第一组动画：Y轴偏移240px后(盒子高度是240px)，停
+    animation.translateX(-240).step();
+
+    // 第4步：导出动画对象赋给数据对象储存
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // 第5步：设置定时器到指定时候后，执行第二组动画
+    setTimeout(function () {
+      // 执行第二组动画：Y轴不偏移，停
+      animation.translateX(0).step()
+      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象
+      this.setData({
+        animationData: animation
+      })
+
+      //关闭抽屉
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showvideo: true,
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+
+    // 显示抽屉
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showvideo: false,
+          showModalStatus: true
+        }
+      );
+    }
+  }
+
+
 })

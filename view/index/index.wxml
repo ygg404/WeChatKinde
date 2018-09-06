@@ -1,8 +1,46 @@
- <scroll-view style="height:100%;" scroll-y="true" scroll-top="{{scrollTop.scroll_top}}" bindscroll="scrollTopFun" >  
+ <scroll-view >  
   
+<!--左侧菜单-->
+<view class="btn" bindtap="powerDrawer" data-statu="open">
+  <image src='../../image/more.png'></image>
+</view>
 
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_content">
+    <view class="drawer_title line" style='background: #cdddee;'>
+    <image src='../../image/home.png'></image>
+    首页</view>
+    <view class="drawer_title line">
+    <image src='../../image/me.png'></image> 
+    关于我们</view>
+    <view class="drawer_title line">
+    <image src='../../image/lie.png'></image> 
+    主营业务</view>
+    <view class="drawer_title line">
+    <image src='../../image/new2.png'></image> 
+    解决方案</view>
+    <view class="drawer_title line">
+    <image src='../../image/success.png'></image> 
+    成功案例</view>
+    <view class="drawer_title line">
+    <image src='../../image/new1.png'></image> 
+    新闻动态</view>
+    <view class="drawer_title line">
+    <image src='../../image/call.png'></image> 
+    联系我们</view>
+  </view>
+
+</view>
+
+<!--头部-->
 <view class="header"></view>
 <view class="title">广东正迪科技股份有限公司</view>
+
+
 
 <!-- 轮播图 -->
 <view class="page-section page-section-spacing swiper" style="width: 100%; height: 400rpx;">
@@ -39,9 +77,11 @@
 </view> 
 
 <!-- 视频 -->
-<view class='index-video'>
+<view class='index-video' wx:if="{{showvideo}}">
   <video id="myVideo" style="width:94%;margin-left:3%;margin-top:40rpx;height:400rpx;z-index:0;"
-  src="https://mini.kd315.net/Content/videos/kindeAd.mp4" loop autoplay objectFit="fill" ></video>
+  src="https://mini.kd315.net/Content/videos/kindeAd.mp4" loop autoplay objectFit='fill'>
+  
+  </video>
 </view>  
 
 <!-- <live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" /> -->
@@ -65,7 +105,7 @@
   </image>
 </view>
 <!-- 合作伙伴轮播图 -->
-<view class="page-section page-section-spacing swiper" style="width: 100%;; height: 460rpx;">
+<view class="page-section page-section-spacing newlb swiper" style="width: 100%;; height: 460rpx;">
   <image src='../../image/icon-preclick.png' class='index-partners-pre' bindtap="preNav"></image>
   <image src='../../image/icon-nextclick.png' class='index-partners-next' bindtap="nextNav"></image>
   <swiper indicator-dots="true" indicator-active-color="#075FA9" bindchange="bindChange" autoplay="true" 
@@ -103,7 +143,7 @@
 <!--底部-->
 <view class="index-foter">
    <view class="index-footer-top" >
-    <text style='margin-right:4%' bindtap="goTopFun"  >Top</text>
+    <text style='margin-right:4%' bindtap="goTopFun"  ></text>
   </view> 
   <view class='index-footer-version'>
     <text>\n</text>
