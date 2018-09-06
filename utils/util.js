@@ -17,10 +17,6 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
-}
-
 //签名
 function getSign(signToken, timestamp, nonce, staffid, data, appSecret) {
   var signStr = "" + timestamp + nonce + staffid + signToken + data + appSecret;
@@ -29,10 +25,6 @@ function getSign(signToken, timestamp, nonce, staffid, data, appSecret) {
   signString = signString.toUpperCase();
   console.log('signString:' + signString);
   return signString;
-}
-
-module.exports = {
-  getSign: getSign
 }
 
 //提示窗口(标题，内容, (错误提示=0 红色，普通提示=1，蓝色) )
@@ -59,6 +51,10 @@ function TipModel(Title, content, level = 1) {
   });
 }
 
+
 module.exports = {
-  TipModel: TipModel
+  formatTime: formatTime,
+  getSign: getSign,
+  TipModel: TipModel,
+
 }

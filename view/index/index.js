@@ -2,6 +2,9 @@
 var xmlParser = require("../../lib/xmldom/dom-parser.js");
 var MD5 = require('../../lib/md5.js');
 var Base64Parse = require('../../lib/Base64.js');
+var utils = require('../../utils/util.js');
+var app = getApp();
+
 Page({
   /**
    * 页面的初始数据
@@ -12,9 +15,7 @@ Page({
     numQuery: '',
     btnDisable: false,
     numStorage: '', //用户输入的防伪码存储值
-    //Toekn用户名密钥
-    staffId: 'kinde_mini',
-    appSecret: '7944616D0CA1095B39D8A97166975D19D3727B5200924F68B5EC28E8AA3427F8',
+
     //跳转到页面顶部
     scrollTop: {
       scroll_top: 0,
@@ -34,48 +35,27 @@ Page({
     }],
     //类目
     category_list: [{
-      category_id: '',
-      category_name: '产品介绍',
+      category_id:  "../Tabs/Business/business",
+      category_name: '主营业务',
       category_color: '#FFFFFF',
       category_image: '../../image/cp.png'
     }, {
-      category_id: '146474b15ba545d9b9717cf8b5a6c3f5',
+      category_id: "../Tabs/Solution/solution",
       category_name: '解决方案',
       category_color: '#FFFFFF',
       category_image: '../../image/fan.png'
     }, {
-      category_id: '9ed6cb3551fb4bfaabfeee89cc63f9b4',
+      category_id: '../Tabs/News/news',
       category_name: '最新动态',
       category_color: '#FFFFFF',
       category_image: '../../image/new.png'
     }, {
-      category_id: '34fb354194e0409e8a80a4382a7fa18d',
+      category_id: '../Tabs/Contact/contact',
       category_name: '联系我们',
       category_color: '#FFFFFF',
       category_image: '../../image/lx.png'
     }],
-    //案例
-    cases_list: [{
-      cases_id: '1',
-      cases_name: '绿箭成功案例',
-      cases_color: '#FFFFFF',
-      cases_image: '../../image/case.jpg'
-    }, {
-      cases_id: '2',
-      cases_name: '绿箭成功案例',
-      cases_color: '#FFFFFF',
-      cases_image: '../../image/case.jpg'
-    }, {
-      cases_id: '3',
-      cases_name: '绿箭成功案例',
-      cases_color: '#FFFFFF',
-      cases_image: '../../image/case.jpg'
-    }, {
-      cases_id: '4',
-      cases_name: '绿箭成功案例',
-      cases_color: '#FFFFFF',
-      cases_image: '../../image/case.jpg'
-    }],
+    //加载隐藏
     loadingHidden: true,
     //合作伙伴
     currentTab: 0,
@@ -92,11 +72,11 @@ Page({
     }],
     //新闻栏
     news_list: [{
-      news_id: 0,
+      news_url: 0,
       news_title: '热烈祝贺正迪被授予“专利创新先进单位”称号',
       news_date: '2017/10/16'
     }, {
-      news_id: 1,
+      news_url: 1,
       news_title: '秋高气爽迎国庆，花好月圆迎中秋',
       news_date: '2017/10/16'
     },],
@@ -107,12 +87,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var testlist =[];
-    // testlist.push({
-    //   news_id: 1,
-    //   news_title: '秋高气爽迎国庆，花好月圆迎中秋',
-    //   news_date: '2017/10/16'
-    //   });
+
     try {
       var value = wx.getStorageSync('storage')
       if (value) {
@@ -122,6 +97,9 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
+    //获取前三条新闻
+    this.AddNews(this);
+
 
   },
 
@@ -129,14 +107,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -188,6 +166,50 @@ Page({
   },
 
   /**
+   * 添加首页新闻栏（前三条）
+   */
+  AddNews:function(that){
+    //获取新闻资讯（前三条）
+    wx.request({
+      url: app.globalData.WebUrl + 'GetTopNews?num=3',
+      method: 'GET',
+      // data: 'b=' + this.data.numQuery,    //参数为键值对字符串
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+      },
+      success: function (res) {
+        var retCode = res.data.StatusCode;
+        if (retCode == 200) {
+          var newslist = [];
+          for( var i = 0; i<res.data.Data.length; i++ ){
+            newslist.push({
+              news_url: '../Tabs/News/news/newsId=' + res.data.Data[i].newsid,
+              news_title: res.data.Data[i].title,
+              news_date: res.data.Data[i].createdate.split('T')[0]
+            });
+          }
+          that.setData({
+            news_list : newslist
+          });
+
+        } else {
+          utils.TipModel('错误', res.data.Info, 0)
+        }
+      },
+      fail: function (res) {
+        utils.TipModel('错误', '网络异常', 0)
+      },
+      complete: function (res) {
+        that.setData({
+          loadingHidden: true,
+        });
+      }
+    });
+  },
+
+  /**
    * 查询按钮
    */
   queryBtnTap: function (e) {
@@ -207,7 +229,8 @@ Page({
   * 获取Token
   */
   getToken: function (that) {
-    if (that.data.isScan == false) {
+    if (that.data.isScan == false)
+    {
       //防伪码必须是14位 20位
       if ((that.data.numQuery.length != 14) && (that.data.numQuery.length != 20)) {
         console.log("len:" + that.data.numQuery.length);
@@ -216,17 +239,7 @@ Page({
           btnDisable: false
         });
 
-        wx.showModal({
-          title: '提示',
-          content: '请输入14位或20位防伪码',
-          confirmColor: '#075FA9',
-          showCancel: false,
-          success: function (res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            }
-          }
-        });
+        utils.TipModel('提示', '请输入14位或20位防伪码');
         return;
       }
     }
@@ -234,10 +247,11 @@ Page({
 
     that.setData({
       loadingHidden: false,
+      showvideo:false,
       isScan: false
     });
     wx.request({
-      url: 'https://mini.kd315.net/api/Security/GetToken?staffId=' + this.data.staffId,
+      url: 'https://mini.kd315.net/api/Security/GetToken?staffId=kinde_mini' ,
       //data: 'code=kindetest&serialNo=' + this.data.antiFakeNo,    //参数为键值对字符串
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
       // 设置请求的 header  
@@ -255,14 +269,26 @@ Page({
           var SignToken = res.data.Data.SignToken;
           console.log("signToken:" + SignToken);
           that.getImageInfo(that, SignToken);
-
-
+        }else{
+          utils.TipModel('错误', res.data.Info, 0);
+          that.setData({
+            loadingHidden: true,
+            showvideo: true,
+            btnDisable: false,
+          }); 
         }
 
       },
-
-      fail: function () {
-        // fail  
+      fail: function (res) {
+        // fail
+        console.log("fail:" + res.data);
+        utils.TipModel('错误' , '网络异常' , 0);
+        that.setData({
+          loadingHidden: true,
+          showvideo: true,
+          btnDisable: false,
+        }); 
+         
       },
       complete: function () {
         // complete
@@ -271,27 +297,12 @@ Page({
 
   },
 
-  getSign: function (signToken, timestamp, nonce, staffid, data, appSecret) {
-    console.log("timestamp:" + timestamp);
-    console.log("nonce:" + nonce);
-    console.log("staffid:" + staffid);
-    console.log("signToken:" + signToken);
-    console.log("data:" + data);
-    console.log("appSecret:" + appSecret);
-    var signStr = "" + timestamp + nonce + staffid + signToken + data + appSecret;
-    console.log("signStr:" + signStr);
-    var signString = MD5.md5(signStr);
-    signString = signString.toUpperCase();
-    console.log('signString:' + signString);
-    return signString;
-  },
-
   getImageInfo: function (that, signToken) {
-    var staffid = that.data.staffId;
+    var staffid = 'kinde_mini';
     var timestamp = Date.parse(new Date());
     var nonce = parseInt(2147483647 * Math.random());
     var query = 'serialNo' + that.data.numQuery;
-    var sign = this.getSign(signToken, timestamp, nonce, staffid, query, that.data.appSecret);
+    var sign = utils.getSign(signToken, timestamp, nonce, staffid, query, app.globalData.AppSecret);
     wx.request({
       url: 'https://mini.kd315.net/api/Security/Verify?b=' + that.data.numQuery,
       method: 'GET',
@@ -321,15 +332,10 @@ Page({
         var eImgHeight = res.data["ImageHeight"];
         var eImgWidth = res.data["ImageWidth"];
         var eImgZoom = res.data["ImageZoom"];
-        //var img = new Image();
+
         var eDescription = res.data["Description"];
         var eIsAuto = res.data["IsAuto"];
 
-        // if (eResult == "IsNotValidNumeric" || eResult == "IsNotValidSerialLength") {
-        //   wx.navigateTo({
-        //     url: '../Error/error'
-        //   });
-        // }
         if (eDescription == "<img  src='https://mini.kd315.net/Content/images/false.png'>") {
           wx.navigateTo({
             url: '../Error/error'
@@ -345,24 +351,17 @@ Page({
             // + '&FirstSearchTime=' + eFirstSearchTime + '&TelCount=' + eTelCount 
           });
         }
+      },
+      complete:function(res){
         that.setData({
           btnDisable: false,
-          loadingHidden: true
+          loadingHidden: true,
+          showvideo: true,
         });
 
       },
 
       fail: function (res) {
-        that.setData({
-          btnDisable: false
-        });
-
-        // wx.showToast({
-        //   title: "fail",
-        //   icon: 'fail',
-        //   duration: 2000,
-        //   mask: true
-        // });
 
       }
 
@@ -450,34 +449,7 @@ Page({
     }
   },
 
-  // 回到顶部
-  scrollTopFun: function (e) {
-    this.setData({});
-    //console.log(e.detail);
-    // if (e.detail.scrollTop > 300) {//触发gotop的显示条件  
-    //   this.setData({
-    //     'scrollTop.goTop_show': true
-    //   });
-    //  // console.log(this.data.scrollTop)
-    // } else {
-    //   this.setData({
-    //     'scrollTop.goTop_show': false
-    //   });
-    // }
-  },
-  goTopFun: function (e) {
-    var _top = this.data.scrollTop.scroll_top;//发现设置scroll-top值不能和上一次的值一样，否则无效，所以这里加了个判断  
-    if (_top == 1) {
-      _top = 0;
-    } else {
-      _top = 1;
-    }
-    this.setData({
-      'scrollTop.scroll_top': _top
-    });
-    // console.log("----");
-    // console.log(this.data.scrollTop)
-  },
+
 
   //左侧菜单
   powerDrawer: function (e) {

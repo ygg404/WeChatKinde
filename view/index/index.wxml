@@ -1,45 +1,60 @@
- <scroll-view >  
-  
 <!--左侧菜单-->
 <view class="btn" bindtap="powerDrawer" data-statu="open">
   <image src='../../image/more.png'></image>
 </view>
 
-<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus || loadingHidden==false }}"></view>
+
 <!--content-->
 <!--使用animation属性指定需要执行的动画-->
 <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
   <!--drawer content-->
   <view class="drawer_content">
-    <view class="drawer_title line" style='background: #cdddee;'>
-    <image src='../../image/home.png'></image>
-    首页</view>
-    <view class="drawer_title line">
-    <image src='../../image/me.png'></image> 
-    关于我们</view>
-    <view class="drawer_title line">
-    <image src='../../image/lie.png'></image> 
-    主营业务</view>
-    <view class="drawer_title line">
-    <image src='../../image/new2.png'></image> 
-    解决方案</view>
-    <view class="drawer_title line">
-    <image src='../../image/success.png'></image> 
-    成功案例</view>
-    <view class="drawer_title line">
-    <image src='../../image/new1.png'></image> 
-    新闻动态</view>
-    <view class="drawer_title line">
-    <image src='../../image/call.png'></image> 
-    联系我们</view>
+    <navigator url='../index/index'>
+      <view class="drawer_title line" style='background: #cdddee;'>
+      <image src='../../image/home.png'></image>
+      首页</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/me.png'></image> 
+      关于我们</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/lie.png'></image> 
+      主营业务</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/new2.png'></image> 
+      解决方案</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/success.png'></image> 
+      成功案例</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/new1.png'></image> 
+      新闻动态</view>
+    </navigator>
+    <navigator url=''>
+      <view class="drawer_title line">
+      <image src='../../image/call.png'></image> 
+      联系我们</view>
+    </navigator>
   </view>
-
 </view>
+
+<loading hidden="{{loadingHidden}}" style='z-index:999'>
+        加载中...
+</loading>
 
 <!--头部-->
 <view class="header"></view>
 <view class="title">广东正迪科技股份有限公司</view>
-
 
 
 <!-- 轮播图 -->
@@ -51,11 +66,7 @@
     </swiper>
 </view>
 
-
-<loading hidden="{{loadingHidden}}" style='z-index:999'>
-        加载中...
-</loading>
-
+<!-- 查询 -->
 <view class='page_row' >  
   <view class="search">  
     <view class="df search_arr">  
@@ -68,7 +79,7 @@
  
 <!-- 类目 -->
 <view class="index-category">
-  <navigator url="/view/category/index?category_id={{category.category_id}}" class="index-category-item" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}">
+  <navigator url="{{category.category_id}}" class="index-category-item" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}">
     <view class="index-category-item-icon" style="background: {{category.category_color}};">
         <image class="index-category-item-icon-image" src="{{category.category_image}}" />
     </view>
@@ -84,26 +95,6 @@
   </video>
 </view>  
 
-<!-- <live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" /> -->
-<!--优秀案例-->
-<!-- <view class="index-cases">
-  <navigator url="/view/category/index?category_id={{category.category_id}}" class="index-cases-item" wx:for="{{cases_list}}" wx:for-item="cases" wx:key="{{cases.cases_id}}">
-    <view class="index-cases-item-icon" style="background: {{cases.cases_color}};">
-        <image class="index-cases-item-icon-image" src="{{cases.cases_image}}" />
-    </view>
-      {{cases.cases_name}} 
-  </navigator>
-</view> -->
-
-
-<!--合作伙伴-->
-<view class="index-partners">
-  <!-- <view class='index-partners-title'>
-    <text style='margin-left:2%'>合作伙伴</text>
-  </view> -->
-  <image style="width:90%;height:400rpx;margin-left:5%;"  src="../../image/clientLog.jpg">
-  </image>
-</view>
 <!-- 合作伙伴轮播图 -->
 <view class="page-section page-section-spacing newlb swiper" style="width: 100%;; height: 460rpx;">
   <image src='../../image/icon-preclick.png' class='index-partners-pre' bindtap="preNav"></image>
@@ -123,8 +114,8 @@
     <text>新闻资讯</text>
      <image src='../../image/newNext.png' class='index-news-title-nimg'></image> 
   </view>
-  <navigator url="/view/category/index?category_id={{category.category_id}}" class="index-news-item"
-   wx:for="{{news_list}}" wx:for-item="news" wx:key="{{news.news_id}}">
+  <navigator url="{{news.news_url}}" class="index-news-item"
+   wx:for="{{news_list}}" wx:for-item="news" wx:key="{{news.news_url}}">
       <view class='index-news-header'>
         <image src='../../image/newHeader.png' class='index-news-himg' ></image>
         <text style='line-height:300%'>{{news.news_title}}</text>
@@ -157,5 +148,3 @@
   </view>
   
 </view>
-
- </scroll-view>   
