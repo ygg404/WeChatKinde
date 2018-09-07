@@ -1,18 +1,22 @@
 // view/Tabs/About/about.js
+var util = require('../../../utils/util.js');
+var WxParse = require('../../../lib/wxParse/wxParse.js');
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    loadingHidden: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -26,7 +30,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    //加载页面
+    wx.request({
+      url: app.globalData.WebUrl + 'GetAboutPage',
+      method: 'GET',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+      },
+
+      success: function (res) {
+        WxParse.wxParse('article', 'html', res.data.Data, that, 5);
+      },
+      fail: function (res) {
+      },
+      complete: function (res) {
+        that.setData({
+          loadingHidden: true,
+        });
+      }
+    });
   },
 
   /**

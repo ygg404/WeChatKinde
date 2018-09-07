@@ -1,2 +1,9 @@
 <!--view/Tabs/About/about.wxml-->
-<text>view/Tabs/About/about.wxml</text>
+<import src="../../../lib/wxParse/wxParse.wxml"/>
+
+<template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+
+<loading hidden="{{loadingHidden}}" style='z-index:999'>
+        加载中...
+</loading>

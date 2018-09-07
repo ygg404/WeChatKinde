@@ -19,7 +19,7 @@
       <image src='../../image/home.png'></image>
       首页</view>
     </navigator>
-    <navigator url=''>
+    <navigator url='../Tabs/About/about'>
       <view class="drawer_title line">
       <image src='../../image/me.png'></image> 
       关于我们</view>
