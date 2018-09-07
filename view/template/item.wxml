@@ -12,28 +12,43 @@
   <!--使用animation属性指定需要执行的动画-->
   <view  class="drawer_attr_box" >
     <!--drawer content-->
-    <view class="drawer_content">
+    <!--drawer content-->
+  <view class="drawer_content">
+    <navigator url='../index/index'>
       <view class="drawer_title line" style='background: #cdddee;'>
-      <image src='/image/home.png'></image>
+      <image src='../../image/home.png'></image>
       首页</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/me.png'></image> 
+      <image src='../../image/me.png'></image> 
       关于我们</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/lie.png'></image> 
+      <image src='../../image/lie.png'></image> 
       主营业务</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/new2.png'></image> 
+      <image src='../../image/new2.png'></image> 
       解决方案</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/success.png'></image> 
+      <image src='../../image/success.png'></image> 
       成功案例</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/new1.png'></image> 
+      <image src='../../image/new1.png'></image> 
       新闻动态</view>
+    </navigator>
+    <navigator url=''>
       <view class="drawer_title line">
-      <image src='/image/call.png'></image> 
+      <image src='../../image/call.png'></image> 
       联系我们</view>
+    </navigator>
     </view>
 
   </view>
