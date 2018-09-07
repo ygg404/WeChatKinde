@@ -32,6 +32,9 @@ Page({
     }, {
       banner_id: 2,
       banner_image: '../../image/k3.jpg'
+    }, {
+      banner_id: 1,
+      banner_image: '../../image/k4.jpg'
     }],
     //类目
     category_list: [{
@@ -62,13 +65,13 @@ Page({
     currentTabNum: 0,
     partner_list: [{
       partner_id: 0,
-      partner_image: '../../image/partner1.png'
+      partner_image: '../../image/partner1.jpg'
     }, {
       partner_id: 1,
-      partner_image: '../../image/partner2.png'
+      partner_image: '../../image/partner2.jpg'
     }, {
       partner_id: 2,
-      partner_image: '../../image/partner3.png'
+      partner_image: '../../image/partner3.jpg'
     }],
     //新闻栏
     news_list: [{
