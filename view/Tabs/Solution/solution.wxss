@@ -1,1 +1,1 @@
-/* view/Tabs/Solution/solution.wxss */
+@import "../../template/item.wxss";

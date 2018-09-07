@@ -1,2 +1,12 @@
-<!--view/Tabs/Solution/solution.wxml-->
-<text>view/Tabs/Solution/solution.wxml</text>
+<import src="../../template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 底部 -->
+<template is="bottom"/>
+
+
+
