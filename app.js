@@ -40,6 +40,8 @@ App({
     AppSecret: '7944616D0CA1095B39D8A97166975D19D3727B5200924F68B5EC28E8AA3427F8',
     //request域名
     WebUrl: 'http://localhost:19401/api/WebApi/',
+    //后台域名
+    miniUrl: 'http://localhost:19401/',
     //获取到的Token
     SignToken: '',
   }
