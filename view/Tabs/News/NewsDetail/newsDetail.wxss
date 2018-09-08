@@ -1,0 +1,33 @@
+/* view/Tabs/News/NewsDetail/newsDetail.wxss */
+@import "/view/template/item.wxss";
+
+/* 标题 */
+.detail-title{
+  margin-left: 5rpx;
+  margin-top: 5rpx;
+}
+
+.detail-title text{
+  line-height: 150%;
+  font-size: 35rpx;
+  font-family: '黑体','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* 时间 */
+.detail-date{
+  margin-left: 5rpx;
+  margin-top: 5rpx;
+}
+
+.detail-date text{
+  line-height: 100%;
+  font-size: 28rpx;
+  color: #bcbcbc;
+}
+
+/* 内容 */
+.detail-content
+{
+  margin-left: 5rpx;
+  margin-top:10rpx;
+}
