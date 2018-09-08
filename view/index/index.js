@@ -188,7 +188,7 @@ Page({
           var newslist = [];
           for( var i = 0; i<res.data.Data.length; i++ ){
             newslist.push({
-              news_url: '../Tabs/News/news/newsId=' + res.data.Data[i].newsid,
+              news_url: '/view/Tabs/News/NewsDetail/newsDetail?newsId=' + res.data.Data[i].newsid,
               news_title: res.data.Data[i].title,
               news_date: res.data.Data[i].createdate.split('T')[0]
             });

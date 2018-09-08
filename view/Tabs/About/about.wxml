@@ -1,9 +1,147 @@
-<!--view/Tabs/About/about.wxml-->
-<import src="../../../lib/wxParse/wxParse.wxml"/>
+<import src="../../template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<view class="top-img">
+  <image src="{{miniUrl}}Content/kinde/about/images/about-bg1.png"></image>
+</view>
+<!-- 正迪简介 -->
+<view class='jj'>
+  <view class='jj-title'>广东正迪</view>
+  <view class='linet'></view>
+    <view class='jj-text'>广东正迪科技股份有限公司成立于2002年，是首家实施防伪防窜包装一体化高科技个性化标签提供商，为中国防伪行业协会副理事长单位，新三板上市企业（证券简称：正迪科技 股票代码：836651）。</view>
+    <view class='jj-text'>拥有占地65亩的产业园区，10万级净化车间，配备有世界最先进的全进口柔印机、凸印机、数码印刷机、自动品检机等标签印刷及后道辅助设备。正迪创造性地提出了随机图像识别防伪原理，拥有目前中国防伪行业协会“极难伪造”评级的“随机图像识别防伪技术”相关专利，是第十届、第十四届、第十七届、第十八届、第十九届“中国专利优秀奖”获奖单位。</view>
+    <image src="{{miniUrl}}Content/kinde/about/images/about-bg2.png"></image>
+  
+</view>
+<!-- 发展历程 -->
+<view class="fzlc">
+  <view class='fzlc-title'>发展历程</view>
+  <view class="linet"></view>
+  <view class='fz'>
+    <view class='time'>
+      <view class='t-detail'>● 2002 ~ 2007</view>
+      <view class='t-sq'>创业期</view>
+    </view>
+    <view>
+        <view class='fz-detail'>- 广东省专利试点单位</view>
+        <view class='fz-detail'>- 正迪科技注册成立</view>
+    </view>
+  </view>
+  <view class='fz'>
+    <view class='time' style='height:280rpx;'>
+      <view class='t-detail'>● 2008 ~ 2012</view>
+      <view class='t-sq'>成长期</view>
+    </view>
+    <view>
+        <view class='fz-detail'>- 获得宝洁、中石油、BP/嘉实多、联合利华、立白、美孚等知名企业的长期供应商资格</view>
+        <view class='fz-detail'>- 率先实施防伪防窜包装一体化</view>
+    </view>
+  </view>
+  <view class='fz'>
+    <view class='time'style="height:240rpx;">
+      <view class='t-detail'>● 2013至今</view>
 
-<template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    <view>
+        <view class='fz-detail'>- 持续扩大生产线：引进世界一流先进设备（捷拉斯柔印机、慧普Indigo数码印刷机、AVT自动品检机等）</view>
+
+    </view>
+  </view>
+  <view class='fz'>
+      <view class='time'>
+        <view class='t-detail'>● 2015年6月</view>
+      </view>
+      <view>
+        <view class='fz-detail'>- 濠江区一期工程投入使用</view>
+      </view>
+  </view>
+  <view class='fz'>
+      <view class='time'>
+        <view class='t-detail'>● 2016年4月</view>
+      </view>
+      <view>
+        <view class='fz-detail'>- 在新三板成功挂牌上市</view>
+      </view>
+  </view>
+</view>
+<!-- 企业荣誉 -->
+<view class="qyry">
+    <view class='fzlc-title'>企业荣誉</view>
+    <view class='linet'></view>
+    <view class="qyry-detail">
+      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian2.png'></image>
+      <view class='hz-detail'>中国专利优秀奖</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian5.png'></image>
+      <view class='hz-detail'>第十四届国家专利优秀奖 专利名称：结构纹理防伪方法</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian1.png'></image>
+      <view class='hz-detail'>第十届中国专利优秀奖</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian6.png'></image>
+      <view class='hz-detail'>第十七届中国专利优秀奖 专利名称：一种一体化防伪防窜标识制备工艺</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:410rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian4.png'></image>
+      <view class='hz-detail'>第十届国家专利优秀奖 专利名称：一种防伪涂布薄材料的制备方法</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:410rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian7.png'></image>
+      <view class='hz-detail'>第十九届国家专利优秀奖 专利名称：一种在线加纤维覆膜的防伪标签制作装置及方法</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:410rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian3.png'></image>
+      <view class='hz-detail'>中国专利优秀奖</view>
+    </view>
+    <view class="qyry-detail">
+      <image style='height:410rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian8.png'></image>
+      <view class='hz-detail'>第十七届中国专利优秀奖 专利名称：一种一体化防伪防窜标识制备工艺</view>
+    </view>
+</view>
+<!-- 先进设备 -->
+<view class="xjsb">
+    <view class='fzlc-title'>先进设备</view>
+    <view class="linet"></view>
+    <view style="color:#0657a9;">惠普HP Indigo数码印刷机</view>
+    <view>无需制版，时间灵活，适合小批量或个性化标签及包装物的印刷</view>
+    <image style="margin-top: 10px;" src="{{miniUrl}}Content/kinde/about/images/03.jpg"></image>
+    <image src="{{miniUrl}}Content/kinde/about/images/04.jpg"></image>
+    <image src="{{miniUrl}}Content/kinde/about/images/05.jpg"></image>
+
+    <view style="color:#0657a9; margin-top:20px;">全进口捷拉斯GALLUS ECS340柔印机（5台）</view>
+    <view>色彩稳定，多工艺组合，环保无污染，适合大批量普通标签及其他包装物的印刷</view>
+    <image style="margin-top: 10px;height:340rpx;" src="{{miniUrl}}Content/kinde/about/images/01.jpg"></image>
+    <image style='height:330rpx;' src="{{miniUrl}}Content/kinde/about/images/02.jpg"></image>
+
+    <view style="color:#0657a9; margin-top:20px;">Esko HD CDI</view>
+    <view style="color:#0657a9;">高线数柔印镭射雕刻制版机</view>
+    <view>直接由电脑文件雕刻制版，无需出菲林，省时环保</view>
+    <image style="margin-top: 10px;height:430rpx;" src="{{miniUrl}}Content/kinde/about/images/06.jpg"></image>
+
+    <view style="color:#0657a9; margin-top:20px;">AVT自动品检机</view>
+    <view>电脑自动化检测手段，减少人工检测的疏漏</view>
+    <image style="margin-top: 10px;" src="{{miniUrl}}Content/kinde/about/images/07.jpg"></image>
+
+    <view style="color:#0657a9; margin-top:20px;">杜邦DuPont</view>
+    <view style="color:#0657a9;">环保型曝光及洗版机</view>
+    <view>电脑自动化检测手段，减少人工检测的疏漏</view>
+    <image style="margin-top: 10px;height:450rpx;" src="{{miniUrl}}Content/kinde/about/images/08.jpg"></image>
+
+</view>
 
 
-<loading hidden="{{loadingHidden}}" style='z-index:999'>
-        加载中...
-</loading>
+<!-- 底部 -->
+<template is="bottom"/>
+
+
+
+
+
+

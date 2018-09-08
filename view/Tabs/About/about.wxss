@@ -1,1 +1,98 @@
-/* view/Tabs/About/about.wxss */
+@import "../../template/item.wxss";
+.top-img image{
+	width: 100%;
+  height: 270rpx;
+	display: block;
+}
+.jj-title{
+  margin-top: 40rpx;
+  font-weight: bold;
+  text-align: center
+}
+.linet{
+      margin: 0 auto;
+    width: 40px;
+    border-bottom: 5px solid #0657a9;
+    height: 10px;
+    margin-bottom: 30rpx;
+}
+.jj-text{
+  width: 90%;
+  margin-left:5%; 
+  font-size: 13px;
+  text-indent: 2em;
+  line-height: 50rpx;
+  color: 	#363636;
+}
+.jj image{
+  width:70%;
+  margin-left: 15%;
+  height: 470rpx;
+	display: block;
+  margin-top: 80rpx;
+}
+.fzlc{
+ 
+  width: 90%;
+  margin-left: 5%;
+}
+.fzlc-title{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40rpx;
+}
+.fz{
+  margin-top: 50rpx;
+}
+.time{
+  float: left;
+  width: 40%;
+  
+ 
+}
+.t-detail{
+  font-size: 35rpx;
+  color: #0657a9;
+}
+.t-sq{
+  margin-left: 75rpx;
+  font-size: 35rpx;
+  color: #0657a9;
+}
+.fz-detail{
+      padding-left: 10px;
+    text-indent: -10px;
+  color: 	#4F4F4F;
+  font-size: 35rpx;
+}
+.qyry{
+  margin-top: 80rpx;
+}
+.qyry-detail{
+  width: 42%;
+      margin-left: 4%;
+    margin-right: 4%;
+    float: left;
+    margin-bottom: 30px;
+    font-size: 13px;
+    text-align: center;
+}
+.qyry-detail image{
+  width: 100%;
+}
+.hz-detail{
+  font-size:30rpx;
+  color: #4F4F4F;
+}
+.xjsb{
+   margin-bottom: 100rpx;
+  width: 90%;
+  margin-left: 5%;
+  font-size: 35rpx;
+  text-align: center;
+}
+.xjsb image{
+  margin-top: 30rpx;
+  width: 100%;
+  display: block;
+}
