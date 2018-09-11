@@ -1,0 +1,36 @@
+<!--view/Tabs/Contact/JobInfo/jobInfo.wxml-->
+<import src="/lib/wxParse/wxParse.wxml"/>
+<import src="/view/template/item.wxml"/>
+
+  <!-- 头部 -->
+  <template is="top"/>
+  <!-- 左侧菜单按钮 -->
+  <template is="item"/> 
+  <!-- 左侧菜单 -->
+  <template is="dra" wx:if="{{showModalStatus}}"/>
+
+<view class='container'>
+  <view class='job'>
+    <view class='name'>{{Name}}</view>
+    <view class='address'>
+      <image src='/image/contact-market.png'></image>
+      <text>{{Address}}</text>
+    </view>
+    <view class='tnode'>职位描述:</view>
+    <view class='jdecription'>
+      <template  is="wxParse" data="{{wxParseData:Description.nodes}}"/>
+    </view>
+    <view class='tnode'>职位要求:</view>
+    <view class='jcontent'>
+      <template  is="wxParse" data="{{wxParseData:Content.nodes}}"/>
+    </view>
+  </view>
+
+  <view class='email'>
+    <text>请发送简历至 <text style='color:blue'>xxxxxx@xx.com</text>，\n</text>
+    <text>邮件主题为：『职位+姓名』</text>
+  </view>
+
+  <!-- 底部 -->
+  <template is="bottom" wx:if="{{loadingHidden}}"/>
+</view>

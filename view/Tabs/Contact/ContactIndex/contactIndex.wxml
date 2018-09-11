@@ -1,0 +1,39 @@
+<!--view/Tabs/Contact/ContactIndex/contactIndex.wxml-->
+<import src="/view/template/item.wxml"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra" wx:if="{{showModalStatus}}"/>
+<!-- 地图 -->
+<image src='/image/contact-bg1.jpg' class='mapImg'></image>
+
+<!-- 联系我们 -->
+<view class='contactus'>
+  <text>联系我们</text>
+  <view class='bottomline'></view>
+  <view class='content'>
+    <text>地址：广东省汕头市濠江区台商投资区台横三路5号\n</text>
+    <text>电话：0754-88815662\n</text>
+    <text>传真：0754-88525039\n</text>
+    <text>邮箱：wang@kd315.com\n</text>
+  </view>
+</view>
+
+<!-- 加入我们 -->
+<view class='joinus'>
+  <text>加入我们</text>
+  <view class='bottomline'></view>
+  <view class='jobcontent'>
+    <view class='job' wx:for="{{jobList}}" wx:for-item="job" wx:key="{{job.job_id}}">
+      <view class='Name'>{{job.job_name}}</view>
+      <view class='Address'>{{job.job_address}}</view>
+      <view class='Description'><text>{{job.job_content}}</text></view>
+      <button class='sendBtn' bindtap='jobInfoView' data-index="{{job.job_id}}">申请职位</button>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>

@@ -12,14 +12,16 @@
         加载中...
 </loading>
 
-<view class='detail-title'>
-  <text>{{news_detail.title}}</text>
+<view class='container'>
+  <view class='detail-title'>
+    <text>{{news_detail.title}}</text>
+  </view>
+  <view class='detail-date'>
+    <text>发布于:{{news_detail.date}}</text>
+  </view>
+  <view class='detail-content'>
+    <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <!-- 底部 -->
+  <template is="bottom" wx:if="{{loadingHidden}}"/>
 </view>
-<view class='detail-date'>
-  <text>发布于:{{news_detail.date}}</text>
-</view>
-<view class='detail-content'>
-  <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view>
-<!-- 底部 -->
-<template is="bottom" wx:if="{{loadingHidden}}"/>

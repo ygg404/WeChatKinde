@@ -1,0 +1,65 @@
+/* view/Tabs/Contact/JobInfo/jobInfo.wxss */
+@import "/view/template/item.wxss";
+
+.job{
+  width: 90%;
+  margin-top: 30rpx;
+  margin-left: 5%;
+  border-style: solid;
+  border-width: 0rpx 0rpx 10rpx 0rpx;
+  border-color: #bcbcbc;
+}
+
+.job .name{
+  font-size: 45rpx;
+  font-weight: 700;
+  text-align: center;
+}
+
+.job .address{
+  margin-top:10rpx;
+  text-align: top;
+}
+
+.job .address image{
+  margin-top:20rpx;
+  margin-left: 40%; 
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.job .address text{
+  margin-left: 10rpx;
+  margin-bottom:10rpx; 
+  line-height: 220%;
+  font-size: 35rpx;
+  font-family: '黑体','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.job .tnode{
+  font-size: 38rpx;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 15rpx;  
+}
+
+.job .jdecription{
+  font-weight: 300;
+  text-align: left;
+  font-size: 30rpx;
+}
+
+.job .jcontent{
+  font-weight: 300;
+  text-align: left;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.email{
+  text-align: center;
+  font-weight: 300;
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
+}

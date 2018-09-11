@@ -1,6 +1,7 @@
-// view/Tabs/News/NewsIndex/newsIndex.js
+// view/Tabs/Contact/ContactIndex/contactIndex.js
 var app = getApp();
 var utils = require('../../../../utils/util.js');
+var WxParse = require('../../../../lib/wxParse/wxParse.js');
 
 Page({
 
@@ -8,19 +9,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    loadingHidden: false,
-    page : 1,
-    //新闻数据加载完毕
-    isEnd : false,
-    //新闻栏
-    news_list: [],
+    jobList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.NewsLoad(this);
+    var that = this;
+    //加载页面
+    wx.request({
+      url: app.globalData.WebUrl + 'GetJobList',
+      method: 'GET',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+      },
+
+      success: function (res) {
+        var retCode = res.data.StatusCode;
+        if (retCode == 200) {
+          var joblist=[];
+          for (var i = 0; i < res.data.Data.length; i++) {
+            joblist.push({
+              job_num: "job" + i,
+              job_id: res.data.Data[i].JobId,
+              job_name: res.data.Data[i].Name,
+              job_address: res.data.Data[i].Address,
+              job_content: res.data.Data[i].Content.replace(/<p>/g, "").replace(/<\/p>/g,"\n")
+            });
+          }
+          that.setData({
+            jobList: joblist
+          });
+        } else {
+          utils.TipModel('错误', res.data.Info, 0)
+        }
+      },
+      fail: function (res) {
+      },
+      complete: function (res) {
+        that.setData({
+          loadingHidden: true,
+        });
+      }
+    });
   },
 
   /**
@@ -62,13 +96,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (!this.data.isEnd){
-      var curpage = this.data.page + 1;
-      this.setData({
-        page : curpage
-      });
-      this.NewsLoad(this);
-    }
+  
   },
 
   /**
@@ -79,69 +107,12 @@ Page({
   },
 
   /**
-   * 新闻加载
+   * 跳转职位详情
    */
-  NewsLoad: function(that){
-    //加载页面
-    wx.request({
-      url: app.globalData.WebUrl + 'GetNewsPageList?page=' + that.data.page,
-      method: 'GET',
-      header: {
-        //设置参数内容类型为x-www-form-urlencoded
-        'content-type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json',
-      },
-
-      success: function (res) {
-        var retCode = res.data.StatusCode;
-        if (retCode == 200) {
-          //新闻数量为0则加载完毕
-          if(res.data.Data.length == 0){
-            that.setData({
-              isEnd:true
-            });
-            return;
-          }
-          var newslist = that.data.news_list;
-          for (var i = 0; i < res.data.Data.length; i++) {
-            //内容摘要
-            var reg = /<span .*?>([^<]*)<\/span>/g;
-            var content = res.data.Data[i].Content.match(reg);
-            var maintext = '';
-            if(content != null){
-              for(var j=0; j<content.length; j++){
-                maintext += content[j].replace(/&nbsp;/g, "").replace(/<br\/>/g, "").replace(/ /g, "").replace(/<.*?>/g,"");
-              }
-              if(maintext==null || maintext.length < 10){
-                maintext = res.data.Data[i].Title;
-              }
-            }else{
-              maintext = res.data.Data[i].Title;
-            }
-
-            newslist.push({
-              news_url: '../NewsDetail/newsDetail?newsId=' + res.data.Data[i].NewsId,
-              news_title: res.data.Data[i].Title,
-              news_date: res.data.Data[i].CreateDate.split('T')[0],
-              new_content: maintext
-            });
-          }
-          that.setData({
-            news_list: newslist
-          });
-
-        } else {
-          utils.TipModel('错误', res.data.Info, 0)
-        }
-      },
-      fail: function (res) {
-      },
-      complete: function (res) {
-        that.setData({
-          loadingHidden: true,
-        });
-      }
-    });
+  jobInfoView: function (event){
+    wx.navigateTo({
+      url: '../JobInfo/jobInfo?jobId=' + event.target.dataset.index
+    })
   },
 
   /**

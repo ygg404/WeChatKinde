@@ -36,6 +36,12 @@
 .index-news-content{
   margin-left: 20rpx;
   margin-bottom: 30rpx;
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+  color: #bcbcbc;
 }
 
 .index-news-content text {
@@ -43,6 +49,14 @@
   margin-top: 10rpx; 
   line-height: 220%;
   font-size: 30rpx;
-  color: #bcbcbc;
+  
 
+}
+
+/* 底部加载 */
+.loadbuttom text{
+  color: #bcbcbc;
+  text-align: center;
+  font-size: 27rpx;
+  margin-left: 40%;
 }

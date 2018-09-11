@@ -12,22 +12,22 @@
 </loading>
 
 <!--新闻资讯-->
-<view class="index-news">
-  <navigator url="{{news.news_url}}" class="index-news-item"
-   wx:for="{{news_list}}" wx:for-item="news" wx:key="{{news.news_url}}">
-      <view class='index-news-date'>
-        <text>{{news.news_date}}</text>
-        <text style='margin-left:75%;color:#00F;'>></text>
-      </view>
-      <view class='index-news-title'>
-        <text style='line-height:150%'>{{news.news_title}}</text>
-      </view>
-      <view class='index-news-content'>
-        <text style='line-height:150%'>{{news.news_title}}</text>
-      </view>
-  </navigator>
-</view> 
+  <view class="index-news">
+    <navigator url="{{news.news_url}}" class="index-news-item"
+    wx:for="{{news_list}}" wx:for-item="news" wx:key="{{news.news_url}}">
+        <view class='index-news-date'>
+          <text>{{news.news_date}}</text>
+          <text style='margin-left:75%;color:#00F;'>></text>
+        </view>
+        <view class='index-news-title'>
+          <text style='line-height:150%'>{{news.news_title}}</text>
+        </view>
+        <view class='index-news-content'>
+          <text style='line-height:150%'>{{news.new_content}}</text>
+        </view>
+    </navigator>
+  </view> 
 
-<view><text>\n</text></view>
-<!-- 底部 -->
-<template is="bottom" wx:if="{{loadingHidden}}"/>
+  <view hidden="{{isEnd==false}}"class="loadbuttom"><text>--加载完毕--</text></view>
+  <!-- 底部 -->
+  <template is="bottom" wx:if="{{loadingHidden}}"/>
