@@ -59,4 +59,5 @@
   text-align: center;
   font-size: 27rpx;
   margin-left: 40%;
+  line-height: 200%;
 }

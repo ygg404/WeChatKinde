@@ -25,38 +25,38 @@ Page({
     //轮播
     banner_list: [{
       banner_id: 0,
-      banner_image: '../../image/k1.jpg'
+      banner_image: '/image/k1.jpg'
     }, {
       banner_id: 1,
-      banner_image: '../../image/k2.jpg'
+      banner_image: '/image/k2.jpg'
     }, {
       banner_id: 2,
-      banner_image: '../../image/k3.jpg'
+      banner_image: '/image/k3.jpg'
     }, {
       banner_id: 1,
-      banner_image: '../../image/k4.jpg'
+      banner_image: '/image/k4.jpg'
     }],
     //类目
     category_list: [{
       category_id:  "../Tabs/Business/business",
       category_name: '主营业务',
       category_color: '#FFFFFF',
-      category_image: '../../image/cp.png'
+      category_image: '/image/cp.png'
     }, {
       category_id: "../Tabs/Solution/solution",
       category_name: '解决方案',
       category_color: '#FFFFFF',
-      category_image: '../../image/fan.png'
+      category_image: '/image/fan.png'
     }, {
-      category_id: '../Tabs/News/news',
+      category_id: '../Tabs/News/NewsIndex/newsIndex',
       category_name: '最新动态',
       category_color: '#FFFFFF',
-      category_image: '../../image/new.png'
+      category_image: '/image/new.png'
     }, {
-      category_id: '../Tabs/Contact/contact',
+      category_id: '../Tabs/Contact/ContactIndex/contactIndex',
       category_name: '联系我们',
       category_color: '#FFFFFF',
-      category_image: '../../image/lx.png'
+      category_image: '/image/lx.png'
     }],
     //加载隐藏
     loadingHidden: true,
@@ -65,13 +65,13 @@ Page({
     currentTabNum: 0,
     partner_list: [{
       partner_id: 0,
-      partner_image: '../../image/partner1.jpg'
+      partner_image: '/image/partner1.jpg'
     }, {
       partner_id: 1,
-      partner_image: '../../image/partner2.jpg'
+      partner_image: '/image/partner2.jpg'
     }, {
       partner_id: 2,
-      partner_image: '../../image/partner3.jpg'
+      partner_image: '/image/partner3.jpg'
     }],
     //新闻栏
     news_list: [{

@@ -52,15 +52,21 @@
 </view>  
 
 <!-- 合作伙伴轮播图 -->
-<view class="page-section page-section-spacing newlb swiper" style="width: 100%;; height: 460rpx;">
-  <image src='../../image/icon-preclick.png' class='index-partners-pre' bindtap="preNav"></image>
-  <image src='../../image/icon-nextclick.png' class='index-partners-next' bindtap="nextNav"></image>
-  <swiper indicator-dots="true" indicator-active-color="#075FA9" bindchange="bindChange" autoplay="true" 
-  interval="9000" duration="700" style="width:60%;height:430rpx;margin-left:20%" current="{{currentTab}}">
-    <swiper-item wx:for="{{partner_list}}" wx:for-item="partner" wx:key="{{partner.partner_id}}">
-        <image style="width: 100%; height: 380rpx; position: absolute; " src="{{partner.partner_image}}" />
-      </swiper-item>
-    </swiper>
+<view class='index-partners'>
+  <view class='index-partners-title'>
+    <text>合作伙伴</text>
+    <image class='index-partners-title-image' src='/image/partnerico.png'></image>
+  </view>
+  <view class="page-section page-section-spacing swiper index-partners-swipers">
+    <image src='/image/icon-preclick.png' class='index-partners-pre' bindtap="preNav"></image>
+    <image src='/image/icon-nextclick.png' class='index-partners-next' bindtap="nextNav"></image>
+    <swiper indicator-dots="true" indicator-active-color="#075FA9" bindchange="bindChange" autoplay="true" 
+    interval="9000" duration="700" style="width:60%;height:430rpx;margin-left:20%" current="{{currentTab}}">
+      <swiper-item wx:for="{{partner_list}}" wx:for-item="partner" wx:key="{{partner.partner_id}}">
+          <image style="width: 100%; height: 380rpx; position: absolute; " src="{{partner.partner_image}}" />
+        </swiper-item>
+      </swiper>
+  </view>
 </view>
 
 <!--新闻资讯-->
