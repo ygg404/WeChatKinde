@@ -44,7 +44,7 @@
       <image src='/image/new1.png'></image> 
       新闻动态</view>
     </navigator>
-    <navigator url=''>
+    <navigator url='/view/Tabs/Contact/ContactIndex/contactIndex'>
       <view class="drawer_title line">
       <image src='/image/call.png'></image> 
       联系我们</view>

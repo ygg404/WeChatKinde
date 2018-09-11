@@ -2,7 +2,14 @@
   "pages": [
     "view/index/index",
     "view/result/result",
-    "view/Error/error"
+    "view/Error/error",
+    "view/Tabs/Success/success",
+    "view/Tabs/About/about",
+    "view/Tabs/Solution/solution",
+    "view/Tabs/News/NewsIndex/newsIndex",
+    "view/Tabs/News/NewsDetail/newsDetail",
+    "view/Tabs/Contact/ContactIndex/contactIndex",
+    "view/Tabs/Contact/JobInfo/jobInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
