@@ -1,0 +1,44 @@
+/* view/Tabs/Solution/jzyx/solution-jzyx.wxss */
+@import "/view/template/item.wxss";
+.fy-detail{
+  text-align: center;
+  width:90%;
+  margin-left: 5%;
+  margin-bottom: 60px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.fy-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.linet{
+  width:45%;
+  height:45rpx;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.jzyx-title{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  background-color: rgb(80, 187, 167);
+  color: #fff;
+}
+.gn{
+  text-align: left;
+}
+.gn-detail{
+      padding-left: 10px;
+      margin-bottom: 20px;
+}
+.jz{
+  text-align: left;
+  padding-left: 10px;
+    text-indent: -10px;
+}

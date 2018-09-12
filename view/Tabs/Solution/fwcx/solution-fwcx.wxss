@@ -1,0 +1,13 @@
+/* view/Tabs/Solution/solution-fwcx.wxss */
+@import "/view/template/item.wxss";
+.fy-detail{
+  text-align: center;
+  
+}
+.fy-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+ 
+}

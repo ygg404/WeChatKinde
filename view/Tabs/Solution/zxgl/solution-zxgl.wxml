@@ -1,0 +1,43 @@
+<import src="/view/template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 在线关联系统 -->
+<image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
+<view class='fy-detail'>
+    <view class="fy-title">在线关联系统</view>
+    <image style='width:40%;height:45rpx;margin-top:10px;' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <image style='width:75%;height:290rpx;margin-top:30px;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg12.png'></image>
+    <view style="font-size:14px;margin-top:10px">生产线的包装关联，主要是把盒码和箱码建立对应关系，有时还涉及到箱码和垛码的关联。可运用于纸盒、塑料包装袋、塑料瓶、酒瓶等不同的包装线，针对不同环境的包装线我们有不同的解决方案。</view>
+    <view class='span'>技术流程图解</view>
+    <image style='height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg13.png'></image>
+    <view class="jstj">
+      <view>第一步：自动贴标，通过自动贴标机将个性化二维码标签贴于产品上。</view>
+      <view>第二步：自动采集，在流水线上采用二维码条码阅读器读取标签二维码，如果出现标签二维码无法读取，会自动进行剔除处理，避免数据混乱。</view>
+      <view>第三步：自动分组，合格产品经系统控制进行自动分组，缓解装箱压力。</view>
+      <view>第四步：自动关联，当产品达到装箱数量，人工扫描外箱二维码数据（或自动采集或自动打印箱标），系统完成瓶-箱的数据关联。</view>
+    </view>
+    
+    <view class='span'>关联软件功能</view>
+    <image style='height:650rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg14.png'></image>
+    <view class="glrj">
+      <view>A.智能采集关联</view>
+      <view>① 占用空间小，改造工期短，节省投入资金，同时具有采集速度快的优点。</view>
+      <view>② 可实现多级赋码控制，全自动对各级码的数据关联处理。</view>
+      <view>③ 完美实现上下游产线无缝对接。</view>
+      <view>④ 满足生产包装正常赋码需求，并且自动记录每瓶产品的生产日期，批号等相关信息。</view>
+      <view>⑤ 适用于所有瓶装在线贴标，赋码关联，所适用的行业；制造业、食品业、酒水饮品等行业。</view>
+      <view>⑥ 对生产产品自动计数，统计人员工作量。</view>
+      <view>⑦ 数据集中管理，为方位防窜货系统提供主要数据。</view>
+      <view>⑧ 现场容错机制,包装赋码生产线是一个软件与硬件相互配合协调工作的系统，生产线相对比较复杂，而且在高强度下工作，本系统针对可能出现问题的环节进行了周密的报警机制和完善容错处理机制，确保系统的正常稳定运行。</view>
+    </view>
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>
+
+		
+

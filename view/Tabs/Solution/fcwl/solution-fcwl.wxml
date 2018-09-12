@@ -1,0 +1,44 @@
+<import src="/view/template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 防窜物流管理系统 -->
+<image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
+
+<view class='fy-detail'>
+    <view class="fy-title">防窜物流管理系统</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <image style='height:360rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg15.png'></image>
+    <view class='fcwl-jj'>
+        <view class='xt'>正迪防窜物流管理系统是针对企业不同销售渠道、不同产品特点而定制开发的全数字化管理系统。综合运用个性化、一维码、二维码、RFID等方式对产品进行标识，通过对RDC发货地与经销商销售区域的关联，掌控商品流向。同时，系统自动检测商品销售地与发货所属区域信息来判断是否窜货，统计窜货信息并发送报告至企业总部。管理者在接到预警后，可根据报告信息进行取证，对窜货经销商窜货行为进行制止或处罚，达到打击防窜的目的，进而维护了企业权益，规范了市场环境。正迪防窜物流还利用二维码具备防伪、溯源、营销等多功能的特性，融入新时代“互联网+”的核心概念，实现了市场大数据的采集功能，为企业进行针对性营销奠定了基础，并拓宽了企业营销渠道，打开了企业迈入全渠道营销时代的大门。</view>
+        <view class='fcwl-title'>功能</view>
+        <view class="gn">
+            <view>1、 防假货；</view>
+            <view>2、 防窜货；</view>
+            <view>3、 防乱价；</view>
+            <view>4、 防越级；</view>
+        </view>
+        <view class='fcwl-title'>解决问题</view>
+        <view class="gn" style="padding-left:22px; text-indent:-22px;">
+            <view>1、建立大仓库概念，较好地把握窜货与正常调货；</view>
+            <view>2、实现库房和生产管理的柔性化，改变目前生产、库存中的被动状态；              </view>
+            <view>3、防窜货和防伪有机结合,可建立有效的预警措施；</view>
+            <view>4、协助市场调研、产品促销、市场管理、企业形象宣传；</view>
+            <view>5、系统平台强大的升级换代功能，为未来企业信息系统的扩展和升级打下良好的基础；</view>
+            <view>6、防止不法分子恶意批量仿制</view>
+        </view>
+        <view class='fcwl-title'>价值体现</view>
+        <view class="gn" style="padding-left:22px; text-indent:-22px;">
+            <view>1、经济收益：打击制假、窜货、避免企业利益受到损害，规范企业渠道管理，保护企业品 牌形象。提高了产品信息录入自动化的水平，节省了大量的人力、物力，便于市场管理，杜绝窜货；更好地掌握客户信息，及时调整销售策略。</view>
+            <view>2、 社会效益：强化企业的品牌形象。通过营造厂家、经销商、消费者三位一体、全民参与打假的氛围，通过安全追溯，获得全社会的认可，赢得消费者的青睐，为品牌的长盛不衰保驾护航。</view>
+            <view>3、信息收益：通过追溯系统可以得到大量的市场数据，建成产品信息仓库。能够进行深度地进行数据挖掘、研究消费者的消费习惯，进而分析产品研发方向，为拓展销售渠道、扩大消费群落、进一步拓展市场提供科学依据。</view>
+            <view>4、管理收益：为识假打假提供了即经济又有效的标识和识别技术手段；有利于企业提高产品质量管理水平，精准定位产品召回范围，减少企业损失，实现问题可追可查。为政府执法管理部门追踪物品信息提供了强有力的技术保障。</view>
+        </view>
+    </view> 
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>

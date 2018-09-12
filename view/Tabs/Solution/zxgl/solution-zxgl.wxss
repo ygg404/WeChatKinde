@@ -1,0 +1,38 @@
+/* view/Tabs/Solution/solution-zxgl.wxss */
+@import "/view/template/item.wxss";
+.fy-detail{
+  text-align: center;
+  width:90%;
+  margin-left: 5%;
+}
+.fy-detail image{
+    width: 100%;
+}
+.fy-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.span{
+      color: #0657a9;
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+}
+.jstj{
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 54px;
+  text-indent: -54px;
+  line-height: 25px;
+}
+.glrj{
+  text-align: left;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 20px;
+  text-indent: -20px;
+  margin-bottom: 60px;
+}

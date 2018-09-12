@@ -1,0 +1,42 @@
+<import src="/view/template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 精准营销系统 -->
+<image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
+<view class='fy-detail'>
+    <view class="fy-title">精准营销系统</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <view>精准营销系统是基于“一物一码”，开展消费者营销活动，运用利益刺激、情感关联等互动方式，帮助企业获得流量、粉丝及消费数据等，实现企业与消费者共创的数字生态价值，构建企业营销生态圈。</view>
+    <image style='height:420rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg25.jpg'></image>
+    <view class='jzyx-title'>功能</view>
+    <view class="gn">
+        <view>• 消费者促销</view>
+        <view class='gn-detail'>通过红包、实物、卡券、积分等多样化促销方式，获取用户及用户数据，有效解决企业促销费用投入不可控、参与度低等问题</view>
+        <view>• 流量应用模式</view>
+        <view class='gn-detail'>充分应用促销活动中所获取的流量资源。通过线上&线下活动组合、电商组合、广告组合等平台设置，实现流量价值应用最大化</view>
+        <view>• 门店应用模式</view>
+        <view class='gn-detail'>一码多用，支持消费者和门店的促销活动同时开展，支持一店一策促销策略，提高门店销量，解决门店用户流失问题</view>
+        <view>• 会员体系搭建</view>
+        <view class='gn-detail'>通过促销活动获取用户及用户数据，建立企业粉丝、会员体系，通过积分奖励等方式持续开展会员运营</view>
+        <view>• 数据应用分析</view>
+        <view class='gn-detail'>通过数据分析获取线上和线下的消费者空间分布、偏好等信息，进行消费者画像。优化企业媒介选择、渠道选择，提升营销转化率，真正实现效果营销</view>
+
+    </view>
+    <view class='jzyx-title'>价值</view>
+    <view class="jz">
+        <view>• 一码多用，支持消费者、渠道、终端的促销活动同时开展，支持一地一策、一店一策，提高促销费用投入产出比</view>
+        <view>• 支持促销形式多样化、消费者领取方式多样化，活动策略可灵活调整。增强活动趣味性，提高消费者参与度</view>
+        <view>• 数字化奖品管理，数据及时反馈，提升促销费用使用率。由事后评估到事中干预，效果评估可做到实时、准确</view>
+        <view>• 可获取消费者、消费行为等多维度数据，帮助企业发现市场机遇、优化营销策略、激发购买热情、提高消费体验</view>
+
+    </view>
+
+</view>
+
+
+<!-- 底部 -->
+<template is="bottom"/>

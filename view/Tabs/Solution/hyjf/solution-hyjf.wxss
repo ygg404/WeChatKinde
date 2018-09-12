@@ -1,0 +1,28 @@
+/* view/Tabs/Solution/hyjf/solution-hyjf.wxss */
+@import "/view/template/item.wxss";
+.fy-detail{
+  text-align: center;
+  width:90%;
+  margin-left: 5%;
+  margin-bottom: 60px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.fy-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.linet{
+  width:45%;
+  height:45rpx;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.gn{
+  text-align: left;
+  margin-top: 30px;
+  padding-left: 23px;
+  text-indent: -23px;
+}

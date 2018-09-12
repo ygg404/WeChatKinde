@@ -1,0 +1,29 @@
+<import src="/view/template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 会员积分 -->
+<image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
+<view class='fy-detail'>
+    <view class="fy-title">会员积分系统</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <view>通过唯一的产品积分码，实现消费者积分、推荐人积分、促销员积分、门店积分以及经销商返利。让持续的积分兑奖返利模式，不断激励与企业相关的产品推广渠道和消费群体，让企业实现360度全赢模式。</view>
+    <image style='height:410rpx;margin-top:30px;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg18.png'></image>
+    <view class='gn'>
+      <view>1、积分转化率高积分转化率是指会员产品积分数量占销售数量的比例，是衡量一个积分系统的关键指标，会员积分系统经过众多客户多年的使用和升级改进，综合积分转化率在40%-80%之间，是您积分系统的不二选择。</view>
+      <view>2、丰富多彩的会员发起活动促销活动丰富，包括多倍积分活动，奖品活动和产品活动。</view>
+      <view>3、生日礼遇会员生日可获得意外惊喜。</view>
+      <view>4、专属咨询会员通过使用积分可获得一对一的贴心专家咨询服务。</view>
+      <view>5、定制报告针对宝宝年龄阶段提供针对性的专业资讯。</view>
+      <view>6、奖品库存预警奖品库存实时更新。</view>
+      <view>7、多角色积分根据企业需要可提供消费者，导购员，门店，经销商等多角色积分。</view>
+
+    </view>
+
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>

@@ -1,0 +1,89 @@
+<import src="/view/template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 顶部图片 -->
+<image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
+<view class='jjfa-title'>解决方案</view>
+<view class='linet'></view>
+<view style='margin-bottom:60px;'>
+<view class="jjfa-detail">
+  
+    <view class='jjfa-left'>
+    <navigator hover-class="none" url='/view/Tabs/Solution/fwcx/solution-fwcx'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg2.png'></image>
+        <view class='jjfa-name'>防伪查询系统</view>
+        </navigator>
+    </view>
+  
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/zxgl/solution-zxgl'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg3.png'></image>
+        <view>在线关联系统</view>
+        </navigator>
+    </view>
+</view>
+<view class="jjfa-detail">
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/fcwl/solution-fcwl'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg4.png'></image>
+        <view>防窜物流系统</view>
+        </navigator>
+    </view>
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/sygl/solution-sygl'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg5.png'></image>
+        <view>溯源管理系统</view>
+        </navigator>
+    </view>
+</view>
+<view class="jjfa-detail">
+     <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/hyjf/solution-hyjf'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg6.png'></image>
+        <view>会员积分系统</view>
+        </navigator>
+    </view>
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/wsgl/solution-wsgl'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg7.png'></image>
+        <view>微商管理系统</view>
+        </navigator>
+    </view>
+</view>
+<view class='jjfa-detail'>
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/jzyx/solution-jzyx'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg8.png'></image>
+        <view>精准营销系统</view>
+        </navigator>
+    </view>
+    <view class='jjfa-left'>
+        <navigator hover-class="none" url='/view/Tabs/Solution/dsj/solution-dsj'>
+        <image src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg9.png'></image>
+        <view>大数据分析系统</view>
+        </navigator>
+    </view>
+</view>
+</view>
+
+    
+   
+    
+    <view class='clear'></view>
+
+
+
+
+
+
+
+
+<!-- 底部 -->
+<template is="bottom"/>
+
+
+

@@ -1,0 +1,41 @@
+/* view/Tabs/Solution/solution-fcwl.wxss */
+@import "/view/template/item.wxss";
+.fy-detail{
+  text-align: center;
+  width:90%;
+  margin-left: 5%;
+  margin-bottom: 60px;
+}
+.linet{
+  width:45%;
+  height:45rpx;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.fy-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+ 
+}
+.fcwl-jj{
+  text-align: left;
+  font-size: 14px;
+  line-height: 28px;
+}
+.xt{
+  text-indent:2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.fcwl-title{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  background-color: rgb(80, 187, 167);
+  color: #fff;
+}

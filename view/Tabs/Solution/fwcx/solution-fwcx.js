@@ -1,14 +1,14 @@
-// view/Tabs/Solution/solution.js
+// view/Tabs/Solution/solution-fwcx.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-      showModalStatus: false,
-   
-    
+    loadingHidden: false,
+    miniUrl: app.globalData.miniUrl,
+    showModalStatus: false,
   },
 
   /**
