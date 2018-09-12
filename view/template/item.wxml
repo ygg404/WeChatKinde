@@ -24,12 +24,12 @@
       <image src='/image/me.png'></image> 
       关于我们</view>
     </navigator>
-    <navigator url=''>
+    <navigator url='/view/Tabs/Business/business'>
       <view class="drawer_title line">
       <image src='/image/lie.png'></image> 
       主营业务</view>
     </navigator>
-    <navigator url=''>
+    <navigator url='/view/Tabs/Solution/index/solution'>
       <view class="drawer_title line">
       <image src='/image/new2.png'></image> 
       解决方案</view>
