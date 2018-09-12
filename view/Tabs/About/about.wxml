@@ -42,7 +42,7 @@
     </view>
   </view>
   <view class='fz'>
-    <view class='time'style="height:240rpx;">
+    <view class='time'style="height:200rpx;">
       <view class='t-detail'>● 2013至今</view>
 
     </view>
