@@ -1,0 +1,31 @@
+@import "../../template/item.wxss";
+.top-img image{
+  width: 100%;
+  height: 450rpx;
+}
+.zyyw{
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+}
+.zyyw-title{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.linet{
+  margin-top: 10px;
+  width: 40%;
+  height: 50rpx;
+}
+.zyyw-detail{
+  color: #363636;
+  font-size: 14px;
+}
+.zyyw-img image{
+  margin-top: 20px;
+}
+.span{
+      color: #0657a9;
+      margin-bottom: 10px;
+}

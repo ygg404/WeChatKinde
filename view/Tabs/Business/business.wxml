@@ -1,0 +1,59 @@
+<import src="../../template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+<!-- 顶部图片 -->
+<view class="top-img">
+    <image src="{{miniUrl}}Content/kinde/business/images/business-bg2.jpg"></image>
+</view>
+
+<!-- 主营业务 -->
+<view class='zyyw'>
+    <view class="zyyw-title">随机图形防伪技术</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <view class='zyyw-detail'>以指纹为原理标签上自然分布的随机纤维，就象人的指纹，独一无二且无法重复</view>
+    <view class='zyyw-img'>
+        <image style='width:80%;height:260rpx;' src='{{miniUrl}}Content/kinde/business/images/business-bg6.png'></image>
+        <image style="width:80%;height:340rpx;" src='{{miniUrl}}Content/kinde/business/images/business-bg7.png'></image>
+        <image style="width:90%;height:460rpx;margin-top:40px;" src='{{miniUrl}}Content/kinde/business/images/business-bg8.jpg'></image>
+    </view>
+    
+    <view class="zyyw-title">一体化防伪防窜标识</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <view class='zyyw-img'>
+        <view class='zyyw-detail'>专利号：201010299936.0专利名称：一种一体化防伪防窜标识制备工艺</view>
+        <image style='width:90%;height:710rpx;' src='{{miniUrl}}Content/kinde/business/images/business-bg9.png'></image>
+        <view class='span'>优点</view>
+        <view style="margin-top:0px;text-align:left;font-size:13px;padding-left:25px;text-indent:-25px;font-weight: 600;">1、在产品原有包装的基础上进行改造，无需另行采购防伪标签</view>
+        <view style="margin-top:0px;text-align:left;font-size:13px;padding-left:25px;text-indent:-25px;font-weight: 600;">2、节约加贴防伪标签的时间成本及人工成本</view>
+        <view style="margin-top:0px;text-align:left;font-size:13px;padding-left:25px;text-indent:-25px;font-weight: 600;">3、外观上更统一、协调   </view>
+        
+    </view>
+
+    <view class="zyyw-title">防伪物流标签</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <view class='zyyw-img'>
+        <image style="width:70%;height:290rpx;" src='{{miniUrl}}Content/kinde/business/images/business-bg10.jpg'></image>
+        <image style='width:90%;height:150rpx;' src='{{miniUrl}}Content/kinde/business/images/business-bg11.jpg'></image>
+        <view style='margin-top:20px;' class='span'>技术原理</view>
+        <view  class='zyyw-detail'>在我司防伪标识上增加唯一性的条码，贴在每个产品上，再结合条码扫描枪与物流管理系统软件，使每件产品的信息准确的记录到电脑软件中，即可随时得到每件产品的物流信息，实现物流管理，发现窜货。</view>
+        <view style='margin-top:20px;' class='span'>产品特色</view>
+        <view class='zyyw-detail'>在我司防伪标识上增加一个个性化的一维码或二维码条码，使得标签具有被条码采集终端识别的功能。</view>
+    </view>
+
+    <view class="zyyw-title">电码标签</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <image style='width:90%;height:360rpx;margin-top:20px;' src='{{miniUrl}}Content/kinde/business/images/business-bg12.jpg'></image>
+    <view class='span'>技术原理</view>
+    <view class='zyyw-detail'>电码防伪技术是利用计算机、网络通信、信息编码和高科技印刷等高新技术，为每一件入网的产品设置一个唯一的编码，并把这一编码储存在中心数据库中（或只存储算法），同时在全国建立起电话（手机）查询鉴别网络。消费者购买到贴有电码防伪标识物的商品，只需拨打电话或手机，输入商品上的编码，即可知道产品的真伪，从而突破了传统的防伪产品容易被批量防冒及消费者不易识别的局限性。</view>
+
+    <view class="zyyw-title">普通标签</view>
+    <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
+    <image style="width:90%;height:310rpx;margin-top:20px;margin-bottom:60px;" src='{{miniUrl}}Content/kinde/business/images/business-bg13.png'></image>
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>
