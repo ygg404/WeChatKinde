@@ -46,24 +46,24 @@
 }
 .time{
   float: left;
-  width: 40%;
+  width: 45%;
   
  
 }
 .t-detail{
-  font-size: 35rpx;
+  font-size: 15px;
   color: #0657a9;
 }
 .t-sq{
   margin-left: 75rpx;
-  font-size: 35rpx;
+  font-size: 15px;
   color: #0657a9;
 }
 .fz-detail{
       padding-left: 10px;
     text-indent: -10px;
   color: 	#4F4F4F;
-  font-size: 35rpx;
+  font-size: 15px;
 }
 .qyry{
   margin-top: 80rpx;
@@ -88,7 +88,7 @@
    margin-bottom: 100rpx;
   width: 90%;
   margin-left: 5%;
-  font-size: 35rpx;
+  font-size: 15px;
   text-align: center;
 }
 .xjsb image{
