@@ -104,7 +104,7 @@
   text-align: right;
   color: white;
   width: 100%;
-  height: 75rpx;
+  height: 80rpx;
   background-color: #075FA9;
   
 }
@@ -112,6 +112,7 @@
 .index-footer-top text{
   color: white;
   font-weight: 700;
+  font-size: 45rpx;
 }
 
 .index-footer-version{
