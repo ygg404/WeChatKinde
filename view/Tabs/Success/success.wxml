@@ -1,0 +1,46 @@
+<import src="../../template/item.wxml"/>
+<!-- 左侧菜单按钮 -->
+<template is="item"/> 
+<!-- 左侧菜单 -->
+<template is="dra"wx:if="{{showModalStatus}}"/>
+<!-- 头部 -->
+<template is="top"/>
+
+<image style="width:100%;height:280rpx;" src="{{miniUrl}}Content/kinde/success/images/cgal-bg1.jpg"></image>
+<!-- 按钮菜单 -->
+<view class="success-fl">
+    <view class='tr'>
+        <button data-num="1" class="{{_num==1?'flag1':'flag'}}" bindtap="show">全部案例</button>
+        <button data-num="2"  class="{{_num==2?'flag1':'flag'}}"  bindtap="show">快消品类</button>
+        <button data-num="3"  class="{{_num==3?'flag1':'flag'}}"  bindtap="show">化妆品类</button>
+    </view>
+    <view class='tr'>
+        <button data-num="4"  class="{{_num==4?'flag1':'flag'}}"  bindtap="show">医药类</button>
+        <button data-num="5"  class="{{_num==5?'flag1':'flag'}}"  bindtap="show">服饰类</button>
+        <button data-num="6"  class="{{_num==6?'flag1':'flag'}}"  bindtap="show">酒类</button>
+    </view>
+    <view class='tr'>
+        <button data-num="7"  class="{{_num==7?'flag1':'flag'}}"  bindtap="show">食品类</button>
+        <button data-num="8"  class="{{_num==8?'flag1':'flag'}}"  bindtap="show">孕婴童类</button>
+        <button data-num="9"  class="{{_num==9?'flag1':'flag'}}"  bindtap="show">汽配类</button>
+    </view>
+    <view class='tr'>
+        <button data-num="10"  class="{{_num==10?'flag1':'flag'}}"  bindtap="show">建材类</button>
+        <button data-num="11"  class="{{_num==11?'flag1':'flag'}}"  bindtap="show">农资类</button>
+        <button data-num="12"  class="{{_num==12?'flag1':'flag'}}"  bindtap="show">电子类</button>
+    </view>
+
+<!-- 全部案例 -->
+  <view  data-num="1" class="{{_num==1?'alshow':'alhide'}}" wx:for="{{imglist}}"wx:for-item="image" >
+      <image data-list="{{imglist}}"data-src="{{image}}" src="{{image}}" bindtap="previewImage"></image>
+  </view>
+    
+    
+    
+    
+    
+</view>
+
+<!-- 底部 -->
+<template is="bottom"/>
+

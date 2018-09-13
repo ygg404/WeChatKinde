@@ -16,7 +16,8 @@
     "view/Tabs/Solution/sygl/solution-sygl",
     "view/Tabs/Solution/fcwl/solution-fcwl",
     "view/Tabs/Solution/zxgl/solution-zxgl",
-    "view/Tabs/Solution/fwcx/solution-fwcx"
+    "view/Tabs/Solution/fwcx/solution-fwcx",
+    "view/Tabs/Success/success"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -34,7 +34,7 @@
       <image src='/image/new2.png'></image> 
       解决方案</view>
     </navigator>
-    <navigator url=''>
+    <navigator url='/view/Tabs/Success/success'>
       <view class="drawer_title line">
       <image src='/image/success.png'></image> 
       成功案例</view>
