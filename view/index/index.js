@@ -34,8 +34,11 @@ Page({
       banner_id: 2,
       banner_image: '/image/k3.jpg'
     }, {
-      banner_id: 1,
+      banner_id: 3,
       banner_image: '/image/k4.jpg'
+    }, {
+      banner_id: 4,
+      banner_image: '/image/k5.jpg'
     }],
     //类目
     category_list: [{
@@ -103,8 +106,6 @@ Page({
     }
     //获取前三条新闻
     this.AddNews(this);
-
-
   },
 
   /**
@@ -203,7 +204,8 @@ Page({
         }
       },
       fail: function (res) {
-        utils.TipModel('错误', '网络异常', 0)
+        ;
+        //utils.TipModel('错误', '网络异常', 0)
       },
       complete: function (res) {
         that.setData({
@@ -390,8 +392,6 @@ Page({
     });
 
   },
-
-
 
   //合作伙伴
   /*** 滑动切换tab***/
