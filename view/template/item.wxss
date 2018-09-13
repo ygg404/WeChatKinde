@@ -109,6 +109,11 @@
   
 }
 
+.index-footer-top text{
+  color: white;
+  font-weight: 700;
+}
+
 .index-footer-version{
   /* margin-top: 50rpx; */
   color: white;

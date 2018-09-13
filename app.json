@@ -2,7 +2,6 @@
   "pages": [
     "view/index/index",
     "view/result/result",
-    "view/Error/error",
     "view/Tabs/About/about",
     "view/Tabs/Business/business",
     "view/Tabs/News/NewsIndex/newsIndex",

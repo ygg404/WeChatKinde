@@ -64,7 +64,7 @@
 <template name="bottom">
     <view class="index-foter">
       <view class="index-footer-top" >
-        <text style='margin-right:4%' bindtap="goTopFun"></text>
+        <text style='margin-right:4%' bindtap="goTop">Top^</text>
       </view> 
       <view class='index-footer-version'>
         <text>\n</text>
@@ -79,5 +79,4 @@
       
     </view>
 </template>
-
 

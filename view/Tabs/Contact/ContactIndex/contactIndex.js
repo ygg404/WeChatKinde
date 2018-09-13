@@ -171,5 +171,12 @@ Page({
         }
       );
     }
+  },
+  goTop: function (e) {  // 一键回到顶部
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
   }
 })
