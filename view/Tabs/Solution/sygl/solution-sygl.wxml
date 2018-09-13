@@ -8,7 +8,7 @@
 <!-- 溯源管理系统 -->
 <image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
 <view class='fy-detail'>
-    <view class="fy-title">防伪查询系统</view>
+    <view class="fy-title">溯源管理系统</view>
     <image class='linet' src='{{miniUrl}}Content/kinde/business/images/business-bg4.png'></image>
     <view class='span'>方案流程</view>
     <image style='height:400rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg16.jpg'></image>
