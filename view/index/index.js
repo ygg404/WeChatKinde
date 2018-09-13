@@ -12,7 +12,8 @@ Page({
   data: {
     showModalStatus: false,
     showvideo: true,
-    numQuery: '',
+    numQuery: '', //输入码
+    scanQuery:'', //扫描码
     btnDisable: false,
     numStorage: '', //用户输入的防伪码存储值
 
@@ -43,7 +44,7 @@ Page({
       category_color: '#FFFFFF',
       category_image: '/image/cp.png'
     }, {
-      category_id: "../Tabs/Solution/solution",
+      category_id: "../Tabs/Solution/index/solution",
       category_name: '解决方案',
       category_color: '#FFFFFF',
       category_image: '/image/fan.png'
@@ -222,19 +223,52 @@ Page({
     }
 
     this.setData({
-      btnDisable: true
+      btnDisable: true,
+      isScan: false
     });
-
+ 
     this.getResult(this);
     // var that = this;
     //this.getToken(this);
   },
 
   /**
+   * 二维码扫描
+   */
+  recognizeCode: function () {
+    //小程序API
+    var that = this;
+    wx.scanCode({
+
+      success: function (res) {
+        var scanCode = res.result.substring(res.result.indexOf('=') + 1, res.result.length);
+
+        that.setData({
+          btnDisable: true,
+          scanQuery: scanCode,
+          isScan: true
+        });
+
+        that.getResult(that);
+      },
+      fail: function () {
+        // fail
+        utils.TipModel('错误', '扫描失败！', 0);
+      },
+      complete: function () {
+        // complete
+      }
+    })
+  },
+
+  /**
    * 获取查询结果
    */
   getResult: function(that){
+    var num ="";
+    //输入方式查询
     if (that.data.isScan == false) {
+      num = that.data.numQuery;
       //防伪码必须是14位 20位
       if ((that.data.numQuery.length != 14) && (that.data.numQuery.length != 20)) {
         console.log("len:" + that.data.numQuery.length);
@@ -242,10 +276,14 @@ Page({
         that.setData({
           btnDisable: false
         });
-
+        
         utils.TipModel('提示', '请输入14位或20位防伪码');
         return;
       }
+    }
+    //扫码方式查询
+    else{
+      num = that.data.ScanQuery;
     }
 
     that.setData({
@@ -253,9 +291,9 @@ Page({
       showvideo:false,
       isScan: false
     });
-    
+
     wx.request({
-      url: app.globalData.WebUrl + 'Verify?b=' + that.data.numQuery,
+      url: app.globalData.WebUrl + 'Verify?b=' + num,
       method: 'GET',
       header: {
         //设置参数内容类型为x-www-form-urlencoded
@@ -265,12 +303,11 @@ Page({
       success: function (res) {
         // success 
         var retCode = res.data.StatusCode;
-        //获取token成功
+        //获取成功
         if (retCode == 200) {
           wx.navigateTo({
             url: '../result/result?eResult='+ Base64Parse.Base64.encode(res.data.Data)
           });
-  
         } else {
           utils.TipModel('错误', res.data.Info, 0);
         }
@@ -297,38 +334,9 @@ Page({
   * 获取Token
   */
   getToken: function (that) {
-    if (that.data.isScan == false)
-    {
-      //防伪码必须是14位 20位
-      if ((that.data.numQuery.length != 14) && (that.data.numQuery.length != 20)) {
-        console.log("len:" + that.data.numQuery.length);
 
-        that.setData({
-          btnDisable: false
-        });
-
-        utils.TipModel('提示', '请输入14位或20位防伪码');
-        return;
-      }
-
-      that.setData({
-        loadingHidden: false,
-        showvideo: false,
-        isScan: false
-      });
-
-
-    }
-
-
-    that.setData({
-      loadingHidden: false,
-      showvideo:false,
-      isScan: false
-    });
     wx.request({
       url: 'https://mini.kd315.net/api/Security/GetToken?staffId=kinde_mini' ,
-      //data: 'code=kindetest&serialNo=' + this.data.antiFakeNo,    //参数为键值对字符串
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
       // 设置请求的 header  
       header: {
@@ -373,76 +381,6 @@ Page({
 
   },
 
-  getImageInfo: function (that, signToken) {
-    var staffid = 'kinde_mini';
-    var timestamp = Date.parse(new Date());
-    var nonce = parseInt(2147483647 * Math.random());
-    var query = 'serialNo' + that.data.numQuery;
-    var sign = utils.getSign(signToken, timestamp, nonce, staffid, query, app.globalData.AppSecret);
-    wx.request({
-      url: 'https://mini.kd315.net/api/Security/Verify?b=' + that.data.numQuery,
-      method: 'GET',
-      // data: 'b=' + this.data.numQuery,    //参数为键值对字符串
-      header: {
-        //设置参数内容类型为x-www-form-urlencoded
-        'content-type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json',
-        'staffid': staffid,
-        'timestamp': timestamp,
-        'nonce': nonce,
-        'query': query,
-        'signature': sign,
-      },
-
-      success: function (res) {
-
-        console.log(res.data);
-
-        var eCount = res.data["Count"];
-        var eFirstSearchTime = res.data["FirstSearchTime"];
-        var eRandomCode = res.data["RandomCode"];
-        var eTelCount = res.data["TelCount"];
-
-        var eImage = res.data["ImageBase64"];
-        var eResult = res.data["Result"];
-        var eImgHeight = res.data["ImageHeight"];
-        var eImgWidth = res.data["ImageWidth"];
-        var eImgZoom = res.data["ImageZoom"];
-
-        var eDescription = res.data["Description"];
-        var eIsAuto = res.data["IsAuto"];
-
-        if (eDescription == "<img  src='https://mini.kd315.net/Content/images/false.png'>") {
-          wx.navigateTo({
-            url: '../Error/error'
-          });
-        }
-        else {
-          wx.navigateTo({
-            url: '../result/result?imageBase64Data=' + eImage +
-            '&ImageHeight=' + eImgHeight + '&ImageZoom=' + eImgZoom
-            + '&Description=' + Base64Parse.Base64.encode(eDescription)
-            + '&IsAuto=' + eIsAuto + '&Result=' + eResult
-            // +'&queryCount=' + eCount
-            // + '&FirstSearchTime=' + eFirstSearchTime + '&TelCount=' + eTelCount 
-          });
-        }
-      },
-      complete:function(res){
-        that.setData({
-          btnDisable: false,
-          loadingHidden: true,
-          showvideo: true,
-        });
-
-      },
-
-      fail: function (res) {
-
-      }
-
-    });
-  },
   /*
   *获取防伪码
   */
@@ -453,39 +391,7 @@ Page({
 
   },
 
-  recognizeCode: function () {
-    //小程序API
-    var that = this;
-    wx.scanCode({
-      //扫描条形码ISBN
-      success: function (res) {
-        var scanCode = res.result.substring(res.result.indexOf('=') + 1, res.result.length);
-        // console.log('scanCode:'+scanCode);
-        // console.log('resCode:' + res.result);
 
-        that.setData({
-          numQuery: scanCode,
-          isScan: true
-        });
-        that.setData({
-          btnDisable: true
-        });
-        // var that = this;
-        that.getToken(that);
-
-        // wx.navigateTo({
-        //   url: '../outJoin/outJoin?UrlScan=' + res.result
-
-        // });
-      },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
-      }
-    })
-  },
 
   //合作伙伴
   /*** 滑动切换tab***/

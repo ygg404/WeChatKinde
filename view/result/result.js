@@ -8,19 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageData:'',
-    eCount:'',
-    eFirstTime:'',
-    eTelCount:'',
-    eImgHeight:'400',
-    eImgZoom:1,
-    eDescription:'',
-    eIsAuto:0,
-    eResult:'',
-    //字体居中
-    textAlign:'left',
-    leftP:2,
- //   CodeData:''
+
   },
 
   /**

@@ -27,7 +27,7 @@
   <view class="search">  
     <view class="df search_arr">  
       <image class="searchcion" size='20' src='../../image/scanCode.png'  bindtap="recognizeCode" ></image>  
-      <input type="number" style='font-size:33rpx'  placeholder="请输入防伪码或扫描二维码" bindinput="numInput" value="{{numQuery}}"/>  
+      <input type="number" style='font-size:33rpx'  placeholder="请输入防伪码或扫描二维码" bindinput="numInput" />  
     </view>  
   </view>  
   <button class='sousuo' bindtap="queryBtnTap" disabled="{{btnDisable}}">查询</button>  
