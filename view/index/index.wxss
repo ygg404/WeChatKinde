@@ -71,7 +71,7 @@ button::after {
   float: left;
   width: 25%;
   text-align: center;
-  font-size: 25rpx;
+  font-size: 28rpx;
   padding-top: 20rpx;
   padding-bottom: 8px;
 }

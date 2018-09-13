@@ -53,7 +53,7 @@ Page({
       category_image: '/image/fan.png'
     }, {
       category_id: '../Tabs/News/NewsIndex/newsIndex',
-      category_name: '最新动态',
+      category_name: '新闻动态',
       category_color: '#FFFFFF',
       category_image: '/image/new.png'
     }, {
