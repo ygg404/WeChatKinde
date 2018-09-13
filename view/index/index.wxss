@@ -119,6 +119,7 @@ button::after {
   margin-left: 10rpx;
   margin-bottom:10rpx; 
   line-height: 220%;
+  font-weight: 700;
   font-size: 46rpx;
   font-family: '黑体','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 

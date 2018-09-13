@@ -224,8 +224,73 @@ Page({
     this.setData({
       btnDisable: true
     });
+
+    this.getResult(this);
     // var that = this;
-    this.getToken(this);
+    //this.getToken(this);
+  },
+
+  /**
+   * 获取查询结果
+   */
+  getResult: function(that){
+    if (that.data.isScan == false) {
+      //防伪码必须是14位 20位
+      if ((that.data.numQuery.length != 14) && (that.data.numQuery.length != 20)) {
+        console.log("len:" + that.data.numQuery.length);
+
+        that.setData({
+          btnDisable: false
+        });
+
+        utils.TipModel('提示', '请输入14位或20位防伪码');
+        return;
+      }
+    }
+
+    that.setData({
+      loadingHidden: false,
+      showvideo:false,
+      isScan: false
+    });
+    
+    wx.request({
+      url: app.globalData.WebUrl + 'Verify?b=' + that.data.numQuery,
+      method: 'GET',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        // success 
+        var retCode = res.data.StatusCode;
+        //获取token成功
+        if (retCode == 200) {
+          wx.navigateTo({
+            url: '../result/result?eResult='+ Base64Parse.Base64.encode(res.data.Data)
+          });
+  
+        } else {
+          utils.TipModel('错误', res.data.Info, 0);
+        }
+
+      },
+      fail: function (res) {
+        // fail
+        console.log("fail:" + res.data);
+        utils.TipModel('错误', '网络异常', 0);
+      },
+      complete: function () {
+        // complete
+        that.setData({
+          loadingHidden: true,
+          showvideo: true,
+          btnDisable: false,
+        });
+      }
+    });
+
   },
 
   /**
@@ -245,6 +310,14 @@ Page({
         utils.TipModel('提示', '请输入14位或20位防伪码');
         return;
       }
+
+      that.setData({
+        loadingHidden: false,
+        showvideo: false,
+        isScan: false
+      });
+
+
     }
 
 
@@ -451,8 +524,6 @@ Page({
       });
     }
   },
-
-
 
   //左侧菜单
   powerDrawer: function (e) {

@@ -3,25 +3,18 @@
 
 .header-line {
   width: 100%;
-  z-index: 2147483647;
   height:20rpx;
   background-color:#075FA9;
 }
 
-.header-line-after {
-  width: 100%;
-  margin-top:20rpx;
-  z-index: 2147483647;
-  height:1rpx;
-  background-color:#d9d9d9;
-}
 
 .title{
   font-size: 45rpx;
+  color:#075FA9;
   text-align: center;
-  margin-top: 25rpx;
-  margin-bottom: 10rpx;
-  color: #075FA9;
+  margin-top: 10rpx;
+  padding-bottom:10rpx;
+  border-bottom: 20rpx solid #075FA9
   
 }
 

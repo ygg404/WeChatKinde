@@ -1,34 +1,14 @@
 <!--view/result/result.wxml  mode="widthFix"-->
-
+ <!-- 查询结果 -->
 
 <view class="header-line"></view>
 <view class="title">查询结果</view>
-<view class='header-line-after'></view>
-<import src="../../lib/wxParse/wxParse.wxml"/>
-<view class='result-container'>
 
-  <view class='item-middle'>
-    <image src="{{imageData}}"  mode='aspectFit'  style="width:100%;height:{{eImgHeight}}px" ></image>
-  </view>
-  <view class='descripLabel' style="text-align:{{textAlign}};margin-left:{{leftP}}%">  
-    <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
-  </view>
+<import src="/lib/wxParse/wxParse.wxml"/>
+<view class='result-container'>
+  <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>
- <!-- <view>
-  <text class='textLabel'>查询次数:<text style='color:red' >{{eCount}}</text>
-  </text>
-</view>
-<view>
-  <text class='FtimeLabel'>首次查询时间:<text style='color:red'>{{eFirstTime}}</text>
-  </text>
-</view>
-<view>
-  <text class='textLabel'>电话查询次数:<text style='color:red'>{{eTelCount}}</text>
-  </text>
-</view>  -->
- <!-- <view class='descripLabel'>
-    <text decode="{{true}}" >&nbsp;  &nbsp;{{eDescription}}\n999</text>
-</view>  -->
+
 <view class='footer-line'>
   <text>©2018 广东正迪科技股份有限公司 版权所有\n</text>
 </view>
