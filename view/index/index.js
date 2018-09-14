@@ -104,6 +104,8 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
+    //获取token
+    this.getToken(this);
     //获取前三条新闻
     this.AddNews(this);
   },
@@ -339,7 +341,7 @@ Page({
   getToken: function (that) {
 
     wx.request({
-      url: 'https://mini.kd315.net/api/Security/GetToken?staffId=kinde_mini' ,
+      url: app.globalData.WebUrl + "GetToken?staffId=" + app.globalData.StaffId ,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
       // 设置请求的 header  
       header: {
@@ -355,26 +357,15 @@ Page({
         if (retCode == 200) {
           var SignToken = res.data.Data.SignToken;
           console.log("signToken:" + SignToken);
-          that.getImageInfo(that, SignToken);
         }else{
           utils.TipModel('错误', res.data.Info, 0);
-          that.setData({
-            loadingHidden: true,
-            showvideo: true,
-            btnDisable: false,
-          }); 
         }
 
       },
       fail: function (res) {
         // fail
         console.log("fail:" + res.data);
-        utils.TipModel('错误' , '网络异常' , 0);
-        that.setData({
-          loadingHidden: true,
-          showvideo: true,
-          btnDisable: false,
-        }); 
+        // utils.TipModel('错误' , '网络异常' , 0);
          
       },
       complete: function () {
