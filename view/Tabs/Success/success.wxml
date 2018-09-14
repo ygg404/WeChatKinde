@@ -30,17 +30,59 @@
         <button data-num="12"  class="{{_num==12?'flag1':'flag'}}"  bindtap="show">电子类</button>
     </view>
 
-<!-- 全部案例 -->
-  <view  data-num="1" class="{{_num==1?'alshow':'alhide'}}" wx:for="{{imglist}}"wx:for-item="image" >
-      <image data-list="{{imglist}}"data-src="{{image}}" src="{{image}}" bindtap="previewImage"></image>
+  <view class='projectshow'>
+    <!-- 全部案例 -->  
+    <view  data-num="1" class="{{_num==1?'alshow':'alhide'}} lishow" wx:for="{{imglist1}}"wx:for-item="image" >   
+        <image data-list="{{imglist1}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 快消品类 -->
+    <view  data-num="2" class="{{_num==2?'alshow':'alhide'}} lishow" wx:for="{{imglist2}}"wx:for-item="image" >   
+        <image data-list="{{imglist2}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 化妆品类 -->
+    <view  data-num="3" class="{{_num==3?'alshow':'alhide'}} lishow" wx:for="{{imglist3}}"wx:for-item="image" >   
+        <image data-list="{{imglist3}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view> 
+    <!-- 医药类    -->
+    <view  data-num="4" class="{{_num==4?'alshow':'alhide'}} lishow" wx:for="{{imglist4}}"wx:for-item="image" >   
+        <image data-list="{{imglist4}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>     
+    <!-- 服饰类 -->
+    <view  data-num="5" class="{{_num==5?'alshow':'alhide'}} lishow" wx:for="{{imglist5}}"wx:for-item="image" >   
+        <image data-list="{{imglist5}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>       
+    <!-- 酒类 -->
+     <view  data-num="6" class="{{_num==6?'alshow':'alhide'}} lishow" wx:for="{{imglist6}}"wx:for-item="image" >   
+        <image data-list="{{imglist6}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 食品类  -->
+     <view  data-num="7" class="{{_num==7?'alshow':'alhide'}} lishow" wx:for="{{imglist7}}"wx:for-item="image" >   
+        <image data-list="{{imglist7}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 孕婴童类  -->
+    <view  data-num="8" class="{{_num==8?'alshow':'alhide'}} lishow" wx:for="{{imglist8}}"wx:for-item="image" >   
+        <image data-list="{{imglist8}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 汽配类  -->
+    <view  data-num="9" class="{{_num==9?'alshow':'alhide'}} lishow" wx:for="{{imglist9}}"wx:for-item="image" >   
+        <image data-list="{{imglist9}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 建材类  -->
+    <view  data-num="10" class="{{_num==10?'alshow':'alhide'}} lishow" wx:for="{{imglist10}}"wx:for-item="image" >   
+        <image data-list="{{imglist10}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 农资类  -->
+    <view  data-num="11" class="{{_num==11?'alshow':'alhide'}} lishow" wx:for="{{imglist11}}"wx:for-item="image" >   
+        <image data-list="{{imglist11}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
+    <!-- 电子类  -->
+    <view  data-num="12" class="{{_num==12?'alshow':'alhide'}} lishow" wx:for="{{imglist12}}"wx:for-item="image" >   
+        <image data-list="{{imglist12}}"data-src="{{image}}" src="{{image}}" mode="aspectFit" bindtap="previewImage"></image>
+    </view>
   </view>
-    
-    
-    
-    
-    
 </view>
 
+<view><text>\n</text></view>
 <!-- 底部 -->
 <template is="bottom"/>
 

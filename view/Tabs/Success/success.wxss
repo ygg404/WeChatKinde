@@ -3,8 +3,8 @@
 
 .success-fl{
   margin-top: 20px;
-  width: 95%;
-  margin-left: 2.5%;
+  width: 96%;
+  margin-left: 2%;
 }
 .flag{
     background-color: #fff;
@@ -38,4 +38,30 @@
 }
 .alhide{
   display: none;
+}
+
+.projectshow{
+  flex-direction:row;
+  align-items:center;
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.lishow{
+  text-align:center;
+  margin-top:15rpx;
+  width:47%;
+  border:1px solid #dedbdb;
+  margin-left:1%;
+  margin-right:1%;
+  height: 170rpx;
+
+}
+
+.lishow image{
+  width: 70%;
+  height: 70%;
+  vertical-align:  middle;
+  margin-top: 7%;
 }

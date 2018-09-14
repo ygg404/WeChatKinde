@@ -243,6 +243,7 @@ Page({
     wx.scanCode({
 
       success: function (res) {
+        console.log("code :" + res.result);
         var scanCode = res.result.substring(res.result.indexOf('=') + 1, res.result.length);
 
         that.setData({
