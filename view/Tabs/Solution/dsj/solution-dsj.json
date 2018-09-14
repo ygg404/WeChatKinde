@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "解决方案--大数据分析系统"
+  "navigationBarTitleText": "解决方案--大数据分析系统",
+  "disableScroll": true,
+  "enablePullDownRefresh": false
 }

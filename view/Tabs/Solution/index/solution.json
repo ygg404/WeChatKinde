@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "解决方案"
+  "navigationBarTitleText": "解决方案",
+  "enablePullDownRefresh": false
 }

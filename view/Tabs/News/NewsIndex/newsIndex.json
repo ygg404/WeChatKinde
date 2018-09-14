@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "新闻动态",
-  "enableReachBottom": true
+  "enableReachBottom": true,
+  "enablePullDownRefresh": false
 }

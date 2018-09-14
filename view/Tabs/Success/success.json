@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "成功案例"
+  "navigationBarTitleText": "成功案例",
+  "enablePullDownRefresh": false
 }

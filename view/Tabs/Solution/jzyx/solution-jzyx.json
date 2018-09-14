@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "解决方案--精准营销系统"
+  "navigationBarTitleText": "解决方案--精准营销系统",
+  "enablePullDownRefresh": false
 }
