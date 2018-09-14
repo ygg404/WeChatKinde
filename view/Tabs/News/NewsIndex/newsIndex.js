@@ -10,6 +10,8 @@ Page({
   data: {
     loadingHidden: false,
     page : 1,
+    //页面加载失败标记
+    Error404 :false,
     //新闻数据加载完毕
     isEnd : false,
     //新闻栏
@@ -135,6 +137,9 @@ Page({
         }
       },
       fail: function (res) {
+        that.setData({
+          Error404: true
+        });
       },
       complete: function (res) {
         that.setData({

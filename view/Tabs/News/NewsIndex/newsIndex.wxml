@@ -29,5 +29,6 @@
   </view> 
 
   <view hidden="{{isEnd==false}}"class="loadbuttom"><text>--加载完毕--</text></view>
+  <image src='/image/404.png' wx:if="{{Error404}}" style='width:100%;height:70vh;'></image>
   <!-- 底部 -->
   <template is="bottom" wx:if="{{loadingHidden}}"/>
