@@ -15,7 +15,7 @@
 
 <!-- 轮播图 -->
 <view class="page-section page-section-spacing swiper" style="width: 100%; height: 400rpx;">
-  <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="4500" duration="700" style="width: 100%; height: 380rpx;" >
+  <swiper indicator-dots="true" indicator-active-color="#0e8ecf" autoplay="false" interval="4500" duration="700" style="width: 100%; height: 380rpx;" >
     <swiper-item wx:for="{{banner_list}}" wx:for-item="banner" wx:key="{{banner.banner_id}}">
         <image style="width: 100%; height: 380rpx; position: absolute; " src="{{banner.banner_image}}" />
       </swiper-item>
