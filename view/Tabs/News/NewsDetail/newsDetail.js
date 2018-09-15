@@ -14,7 +14,8 @@ Page({
     news_detail:{
       title: '',
       date: '',
-      content:''
+      content:'',
+      Error404:false
     },
   },
 
@@ -41,7 +42,7 @@ Page({
           that.setData({
             news_detail: {
               title: res.data.Data.Title,
-              date: res.data.Data.CreateDate.split('T')[0],
+              date: '发布于:'+res.data.Data.CreateDate.split('T')[0],
               content: res.data.Data.Content
             }
           });
@@ -51,6 +52,9 @@ Page({
         }
       },
       fail: function (res) {
+        that.setData({
+          Error404: true
+        })
       },
       complete: function (res) {
         that.setData({

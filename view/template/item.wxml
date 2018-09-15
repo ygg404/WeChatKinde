@@ -56,8 +56,7 @@
 
 <!-- 头部 -->
 <template name="top">
-    <view class="header"></view>
-    <view class="title">广东正迪科技股份有限公司</view>
+    <view class="header">广东正迪科技股份有限公司</view>
 </template>
 
 <!-- 底部 -->

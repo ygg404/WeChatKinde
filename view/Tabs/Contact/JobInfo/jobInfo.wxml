@@ -2,6 +2,7 @@
 <import src="/lib/wxParse/wxParse.wxml"/>
 <import src="/view/template/item.wxml"/>
 
+<view class='container'>
   <!-- 头部 -->
   <template is="top"/>
   <!-- 左侧菜单按钮 -->
@@ -9,7 +10,7 @@
   <!-- 左侧菜单 -->
   <template is="dra" wx:if="{{showModalStatus}}"/>
 
-<view class='container'>
+
   <view class='job'>
     <view class='name'>{{Name}}</view>
     <view class='address'>

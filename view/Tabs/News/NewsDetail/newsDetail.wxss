@@ -9,7 +9,8 @@
 
 .detail-title text{
   line-height: 150%;
-  font-size: 35rpx;
+  font-size: 45rpx;
+  font-weight: 700;
   font-family: '黑体','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
