@@ -84,11 +84,22 @@
   color: blue;
 }
 
+.joinus .jobcontent .job .Description{
+  width: 90%;
+  margin-left: 5%;
+}
+
 .joinus .jobcontent .job .Description text{
   font-size: 26rpx;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   color: #bcbcbc;
+  margin-left: 20rpx;
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
 }
 
 .joinus .jobcontent .job .sendBtn{

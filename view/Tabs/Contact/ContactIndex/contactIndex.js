@@ -32,12 +32,19 @@ Page({
         if (retCode == 200) {
           var joblist=[];
           for (var i = 0; i < res.data.Data.length; i++) {
+
+            var con ="";
+            if (res.data.Data[i].Content=="<p></p>"){
+              con = res.data.Data[i].Description.replace(/<p>/g, "").replace(/<\/p>/g, "\n")
+            }else{
+              con = res.data.Data[i].Content.replace(/<p>/g, "").replace(/<\/p>/g, "\n")
+            }
             joblist.push({
               job_num: "job" + i,
               job_id: res.data.Data[i].JobId,
               job_name: res.data.Data[i].Name,
               job_address: res.data.Data[i].Address,
-              job_content: res.data.Data[i].Content.replace(/<p>/g, "").replace(/<\/p>/g,"\n")
+              job_content: con
             });
           }
           that.setData({

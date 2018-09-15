@@ -17,11 +17,11 @@
       <image src='/image/contact-market.png'></image>
       <text>{{Address}}</text>
     </view>
-    <view class='tnode'>职位描述:</view>
+    <view class='tnode' wx:if="{{descShow}}">职位描述:</view>
     <view class='jdecription'>
       <template  is="wxParse" data="{{wxParseData:Description.nodes}}"/>
     </view>
-    <view class='tnode'>职位要求:</view>
+    <view class='tnode' wx:if="{{conShow}}">职位要求:</view>
     <view class='jcontent'>
       <template  is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>

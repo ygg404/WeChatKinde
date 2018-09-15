@@ -12,7 +12,9 @@ Page({
     Name: '',
     Address: '',
     Description: '',
-    Content: ''
+    Content: '',
+    descShow :true,
+    conShow: true,
   },
 
   /**
@@ -40,7 +42,18 @@ Page({
             Description : res.data.Data.Description,
             Content : res.data.Data.Content
             });
-          WxParse.wxParse('Description', 'html', res.data.Data.Content, that, 5);
+          //描述和要求为空 则隐藏
+          if (res.data.Data.Description == "<p></p>"){
+            that.setData({
+              descShow: false,
+            });
+          }
+          if (res.data.Data.Content == "<p></p>"){
+            that.setData({
+              conShow: false,
+            });
+          }
+          WxParse.wxParse('Description', 'html', res.data.Data.Description, that, 5);
           WxParse.wxParse('Content', 'html', res.data.Data.Content, that, 5);
         } else {
           utils.TipModel('错误', res.data.Info, 0)
