@@ -25,10 +25,16 @@ Page({
   onLoad: function (options) {
     var newsId = options.newsId;
 
+    //获取文章被阅读的标记
+    var isRead = true;
+    if (wx.getStorageSync(newsId) == null || wx.getStorageSync(newsId) == "" ){
+        isRead = false;
+    }
+
     var that = this;
     //加载页面
     wx.request({
-      url: app.globalData.WebUrl + 'GetNewsEntity?newsId=' + newsId,
+      url: app.globalData.WebUrl + 'GetNewsEntity?newsId=' + newsId + '&isRead=' + isRead,
       method: 'GET',
       header: {
         //设置参数内容类型为x-www-form-urlencoded
@@ -47,6 +53,12 @@ Page({
             }
           });
           WxParse.wxParse('article', 'html', res.data.Data.Content, that, 5);
+          //获取新闻成功则标记该文章已经阅读
+          wx.setStorage({
+            key: newsId ,
+            data: '1',
+          });
+
         } else {
           utils.TipModel('错误', res.data.Info, 0)
         }
