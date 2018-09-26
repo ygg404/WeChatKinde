@@ -26,27 +26,27 @@
       <view class='t-detail'>● 2002 ~ 2007</view>
       <view class='t-sq'>创业期</view>
     </view>
-    <view>
+    <view class='de'>
         <view class='fz-detail'>- 广东省专利试点单位</view>
         <view class='fz-detail'>- 正迪科技注册成立</view>
     </view>
   </view>
   <view class='fz'>
-    <view class='time' style='height:280rpx;'>
+    <view class='time' >
       <view class='t-detail'>● 2008 ~ 2012</view>
       <view class='t-sq'>成长期</view>
     </view>
-    <view>
+    <view class='de'>
         <view class='fz-detail'>- 获得宝洁、中石油、BP/嘉实多、联合利华、立白、美孚等知名企业的长期供应商资格</view>
         <view class='fz-detail'>- 率先实施防伪防窜包装一体化</view>
     </view>
   </view>
   <view class='fz'>
-    <view class='time'style="height:200rpx;">
+    <view class='time'>
       <view class='t-detail'>● 2013至今</view>
 
     </view>
-    <view>
+    <view class='de'>
         <view class='fz-detail'>- 持续扩大生产线：引进世界一流先进设备（捷拉斯柔印机、慧普Indigo数码印刷机、AVT自动品检机等）</view>
 
     </view>
@@ -55,7 +55,7 @@
       <view class='time'>
         <view class='t-detail'>● 2015年6月</view>
       </view>
-      <view>
+      <view class='de'>
         <view class='fz-detail'>- 濠江区一期工程投入使用</view>
       </view>
   </view>
@@ -63,7 +63,7 @@
       <view class='time'>
         <view class='t-detail'>● 2016年4月</view>
       </view>
-      <view>
+      <view class='de'>
         <view class='fz-detail'>- 在新三板成功挂牌上市</view>
       </view>
   </view>
@@ -73,19 +73,19 @@
     <view class='fzlc-title'>企业荣誉</view>
     <view class='linet'></view>
     <view class="qyry-detail">
-      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian2.png'></image>
+      <image style='height:230rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian2.png'></image>
       <view class='hz-detail'>中国专利优秀奖</view>
     </view>
     <view class="qyry-detail">
-      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian5.png'></image>
+      <image style='height:230rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian5.png'></image>
       <view class='hz-detail'>第十四届国家专利优秀奖 专利名称：结构纹理防伪方法</view>
     </view>
     <view class="qyry-detail">
-      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian1.png'></image>
+      <image style='height:230rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian1.png'></image>
       <view class='hz-detail'>第十届中国专利优秀奖</view>
     </view>
     <view class="qyry-detail">
-      <image style='height:250rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian6.png'></image>
+      <image style='height:230rpx;' src='{{miniUrl}}Content/kinde/about/images/huojian6.png'></image>
       <view class='hz-detail'>第十七届中国专利优秀奖 专利名称：一种一体化防伪防窜标识制备工艺</view>
     </view>
     <view class="qyry-detail">

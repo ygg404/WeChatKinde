@@ -43,12 +43,16 @@
 }
 .fz{
   margin-top: 50rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
 }
-.time{
-  float: left;
+.fz .time{
   width: 45%;
-  
- 
+
+}
+.de{
+  width: 55%;
 }
 .t-detail{
   font-size: 15px;
