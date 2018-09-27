@@ -1475,7 +1475,7 @@ Page({
     var current = e.target.dataset.src;
     wx.previewImage({
       current: current, // 当前显示图片的http链接  
-      urls: this.data.imglist// 需要预览的图片http链接列表  
+      urls: e.target.dataset.list// 需要预览的图片http链接列表  
     })
   },
   goTop: function (e) {  // 一键回到顶部
