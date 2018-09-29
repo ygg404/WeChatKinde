@@ -1,0 +1,19 @@
+<!--view/Components/bottom-comp/bottom-comp.wxml-->
+<!-- 底部 -->
+<view class="index-foter">
+  <view class="index-footer-top" >
+      <text style='margin-right:4%' bindtap="goTop">Top^</text>
+    </view> 
+  <view class='index-footer-version'>
+        <text>\n</text>
+        <text>地址：广东省汕头市濠江区台商投资区台横三路五号\n</text>
+        <view style="height:10rpx"></view>
+        <text>电话：0754-88568333 传真：0754-88525039\n</text>
+        <view style="height:10rpx"></view>
+        <text>邮箱：rjb@kd315.com\n</text>
+        <view style="height:10rpx"></view>
+      <text>©2018 广东正迪科技股份有限公司 版权所有\n</text>
+  </view>
+      
+</view>
+

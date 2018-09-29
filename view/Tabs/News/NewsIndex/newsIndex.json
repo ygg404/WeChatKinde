@@ -1,5 +1,10 @@
 {
   "navigationBarTitleText": "新闻动态",
   "enableReachBottom": true,
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "bottom-component": "/view/Components/bottom-com/bottom-com",
+    "top-component": "/view/Components/top-com/top-com",
+    "menu-component": "/view/Components/menu-com/menu-com"
+  }
 }

@@ -1,13 +1,17 @@
-<!--view/result/result.wxml  mode="widthFix"-->
+
  <!-- 查询结果 -->
-
-<view class="header-line">查询结果</view>
-
 <import src="/lib/wxParse/wxParse.wxml"/>
-<view class='result-container'>
-  <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view>
+<import src="/view/template/item.wxml"/>
 
-<view class='footer-line'>
-  <text>©2018 广东正迪科技股份有限公司 版权所有\n</text>
-</view>
+
+  <view class="header-line">查询结果</view>
+
+  <view class='result-container'>
+    <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+
+  <!-- <view class='footer-line'>
+    <text>©2018 广东正迪科技股份有限公司 版权所有\n</text>
+  </view> -->
+  <!-- 底部 -->
+<template is="bottom"/>

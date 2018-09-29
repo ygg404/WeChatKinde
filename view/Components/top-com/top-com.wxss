@@ -1,0 +1,11 @@
+/* view/Components/top-com/top-com.wxss */
+/*头部*/
+.header{
+  font-size: 45rpx;
+  text-align: center;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  color: #075FA9;
+  border-top: 20rpx solid #075FA9;
+  border-bottom: 20rpx solid #075FA9;
+}

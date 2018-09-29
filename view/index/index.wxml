@@ -1,17 +1,9 @@
-<import src="../template/item.wxml"/>
 <!-- 头部 -->
-<template is="top"/>
-<!-- 左侧菜单按钮 -->
-<template is="item"/> 
+<top-component></top-component>
 <!-- 左侧菜单 -->
-<template is="dra"wx:if="{{showModalStatus}}"/>
-
-<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus || loadingHidden==false }}"></view>
-
-<loading hidden="{{loadingHidden}}" style='z-index:999'>
-        加载中...
-</loading>
-
+<menu-component bindshowEvent="showModelListener"></menu-component>
+<!-- 加载中窗口 -->
+<loading-component  wx:if="{{!loadingHidden}}"></loading-component>
 
 <!-- 轮播图 -->
 <view class="page-section page-section-spacing swiper" style="width: 100%; height: 400rpx;">
@@ -97,4 +89,4 @@
 <view><text>\n</text></view>
 
 <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>

@@ -1,0 +1,6 @@
+<!--view/Components/loading-com/loading-com.wxml-->
+<view class='.drawer_screen'></view>
+  <loading style='z-index:999'>
+          加载中...
+  </loading>
+

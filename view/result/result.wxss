@@ -1,5 +1,6 @@
 /* view/result/result.wxss */
 @import "/lib/wxParse/wxParse.wxss";
+@import "/view/template/item.wxss";
 
 .header-line {
   font-size: 45rpx;
