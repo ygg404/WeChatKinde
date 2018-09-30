@@ -1,8 +1,8 @@
 
  <!-- 查询结果 -->
 <import src="/lib/wxParse/wxParse.wxml"/>
-<import src="/view/template/item.wxml"/>
-
+<!-- 左侧菜单 -->
+<menu-component ></menu-component>
 
   <view class="header-line">查询结果</view>
 
@@ -14,4 +14,4 @@
     <text>©2018 广东正迪科技股份有限公司 版权所有\n</text>
   </view> -->
   <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>

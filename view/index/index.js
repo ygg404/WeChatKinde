@@ -10,7 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // showModalStatus: false,
     showvideo: true,
     numQuery: '', //输入码
     scanQuery:'', //扫描码
@@ -95,12 +94,18 @@ Page({
    */
   onLoad: function (options) {
     // options 中的 scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
-    var scene = decodeURIComponent(options.scene)
+    var scene = decodeURIComponent(options.scene);
+    //小程序二维码带有参数 
+    if(scene != null && scene != "undefined" && scene != ""){
+      //直接进入查询
+      this.getRequest(this , scene);
 
-    //获取token
-    this.getToken(this);
-    //获取前三条新闻
-    this.AddNews(this);
+    }else{
+      //获取token
+      this.getToken(this);
+      //获取前三条新闻
+      this.AddNews(this);
+    }
   },
 
   /**
@@ -284,9 +289,17 @@ Page({
       num = that.data.ScanQuery;
     }
 
+    that.getRequest(that , num);
+
+  },
+
+  /**
+   * request查询结果
+   */
+  getRequest : function(that,num){
     that.setData({
       loadingHidden: false,
-      showvideo:false,
+      showvideo: false,
       isScan: false
     });
 
@@ -304,7 +317,7 @@ Page({
         //获取成功
         if (retCode == 200) {
           wx.navigateTo({
-            url: '../result/result?eResult='+ Base64Parse.Base64.encode(res.data.Data)
+            url: '../result/result?eResult=' + Base64Parse.Base64.encode(res.data.Data)
           });
         } else {
           utils.TipModel('错误', res.data.Info, 0);
@@ -325,7 +338,6 @@ Page({
         });
       }
     });
-
   },
 
   /**
