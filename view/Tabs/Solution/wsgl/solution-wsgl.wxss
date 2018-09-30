@@ -1,5 +1,4 @@
 /* view/Tabs/Solution/wsgl/solution-wsgl.wxss */
-@import "/view/template/item.wxss";
 .fy-detail{
   text-align: center;
   width:90%;

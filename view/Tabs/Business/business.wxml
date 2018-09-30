@@ -1,10 +1,8 @@
-<import src="../../template/item.wxml"/>
-<!-- 左侧菜单按钮 -->
-<template is="item"/> 
-<!-- 左侧菜单 -->
-<template is="dra"wx:if="{{showModalStatus}}"/>
+
 <!-- 头部 -->
-<template is="top"/>
+<top-component></top-component>
+<!-- 左侧菜单 -->
+<menu-component ></menu-component>
 <!-- 顶部图片 -->
 <view class="top-img">
     <image src="{{miniUrl}}Content/kinde/business/images/business-bg2.jpg"></image>
@@ -56,4 +54,4 @@
 </view>
 
 <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>

@@ -1,5 +1,4 @@
 /* view/Tabs/Solution/hyjf/solution-hyjf.wxss */
-@import "/view/template/item.wxss";
 .fy-detail{
   text-align: center;
   width:90%;

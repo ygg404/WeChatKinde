@@ -1,4 +1,4 @@
-@import "/view/template/item.wxss";
+
 .jjfa-title{
   text-align: center;
   color: #0657a9;

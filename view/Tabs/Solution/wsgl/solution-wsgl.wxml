@@ -1,10 +1,8 @@
-<import src="/view/template/item.wxml"/>
-<!-- 左侧菜单按钮 -->
-<template is="item"/> 
-<!-- 左侧菜单 -->
-<template is="dra"wx:if="{{showModalStatus}}"/>
+
 <!-- 头部 -->
-<template is="top"/>
+<top-component></top-component>
+<!-- 左侧菜单 -->
+<menu-component ></menu-component>
 <!-- 微商管理系统 -->
 <image style='width:100%;height:320rpx;' src='{{miniUrl}}Content/kinde/solution/images/jjfa-bg1.jpg'></image>
 <view class='fy-detail'>
@@ -30,4 +28,4 @@
 
 
 <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>
