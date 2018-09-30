@@ -1,11 +1,8 @@
 <!--view/Tabs/Contact/ContactIndex/contactIndex.wxml-->
-<import src="/view/template/item.wxml"/>
 <!-- 头部 -->
-<template is="top"/>
-<!-- 左侧菜单按钮 -->
-<template is="item"/> 
+<top-component></top-component>
 <!-- 左侧菜单 -->
-<template is="dra" wx:if="{{showModalStatus}}"/>
+<menu-component></menu-component>
 <!-- 地图 -->
 <image src='/image/contact-bg1.jpg' class='mapImg'></image>
 
@@ -36,4 +33,4 @@
 </view>
 
 <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>

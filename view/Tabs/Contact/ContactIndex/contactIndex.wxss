@@ -1,5 +1,3 @@
-@import "/view/template/item.wxss";
-
 /* 地图 */
 .mapImg {
   width :100%;
