@@ -82,6 +82,13 @@ Component({
       }
 
 
+    },
+
+    closeModel: function(e){
+      this.setData(
+      {
+        showModalStatus: false
+      });
     }
   }
 })

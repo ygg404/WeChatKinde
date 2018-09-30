@@ -11,7 +11,7 @@
   <!--使用animation属性指定需要执行的动画-->
 <view  class="drawer_attr_box" wx:if="{{showModalStatus}}" >
 
-  <view class="drawer_content">
+  <view class="drawer_content" bindtap='closeModel'>
     <navigator url='/view/index/index'>
       <view class="drawer_title line" style='background: #cdddee;'>
       <image src='/image/home.png'></image>
