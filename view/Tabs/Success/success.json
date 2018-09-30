@@ -1,4 +1,10 @@
 {
   "navigationBarTitleText": "成功案例",
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "bottom-component": "/view/Components/bottom-com/bottom-com",
+    "top-component": "/view/Components/top-com/top-com",
+    "menu-component": "/view/Components/menu-com/menu-com",
+    "loading-component": "/view/Components/loading-com/loading-com"
+  }
 }

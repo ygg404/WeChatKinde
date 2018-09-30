@@ -1,6 +1,4 @@
 /* view/Tabs/Success/success.wxss */
-@import "/view/template/item.wxss";
-
 .success-fl{
   margin-top: 20px;
   width: 96%;

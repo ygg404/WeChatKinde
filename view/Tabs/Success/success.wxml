@@ -1,10 +1,7 @@
-<import src="../../template/item.wxml"/>
-<!-- 左侧菜单按钮 -->
-<template is="item"/> 
-<!-- 左侧菜单 -->
-<template is="dra"wx:if="{{showModalStatus}}"/>
 <!-- 头部 -->
-<template is="top"/>
+<top-component></top-component>
+<!-- 左侧菜单 -->
+<menu-component ></menu-component>
 
 <image style="width:100%;height:280rpx;" src="{{miniUrl}}Content/kinde/success/images/cgal-bg1.jpg"></image>
 <!-- 按钮菜单 -->
@@ -84,5 +81,5 @@
 
 <view><text>\n</text></view>
 <!-- 底部 -->
-<template is="bottom"/>
+<bottom-component></bottom-component>
 
