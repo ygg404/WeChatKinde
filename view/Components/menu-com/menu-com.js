@@ -89,6 +89,7 @@ Component({
       {
         showModalStatus: false
       });
+      this.triggerEvent('showEvent', { showModalStatus: this.data.showModalStatus });
     }
   }
 })
