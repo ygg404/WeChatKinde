@@ -1,6 +1,4 @@
 /* view/Tabs/Contact/JobInfo/jobInfo.wxss */
-@import "/view/template/item.wxss";
-
 .job{
   width: 90%;
   margin-top: 30rpx;

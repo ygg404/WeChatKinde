@@ -1,14 +1,11 @@
 <!--view/Tabs/Contact/JobInfo/jobInfo.wxml-->
 <import src="/lib/wxParse/wxParse.wxml"/>
-<import src="/view/template/item.wxml"/>
 
 <view class='container'>
   <!-- 头部 -->
-  <template is="top"/>
-  <!-- 左侧菜单按钮 -->
-  <template is="item"/> 
+  <top-component></top-component>
   <!-- 左侧菜单 -->
-  <template is="dra" wx:if="{{showModalStatus}}"/>
+  <menu-component></menu-component>
 
 
   <view class='job'>
@@ -33,5 +30,5 @@
   </view>
 
   <!-- 底部 -->
-  <template is="bottom" wx:if="{{loadingHidden}}"/>
+  <bottom-component wx:if="{{loadingHidden}}" ></bottom-component>
 </view>
