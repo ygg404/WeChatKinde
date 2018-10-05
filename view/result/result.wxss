@@ -1,17 +1,15 @@
 /* view/result/result.wxss */
 @import "/lib/wxParse/wxParse.wxss";
 
-.header-line {
+.result-line {
   font-size: 45rpx;
+  font-weight: 600;
   text-align: center;
   padding-top: 10rpx;
   padding-bottom: 10rpx;
-  color: #075FA9;
-  border-top: 20rpx solid #075FA9;
-  border-bottom: 20rpx solid #075FA9;
+  color: black;
+  margin-top: 10rpx;
 }
-
-
 
 
 .result-container{

@@ -1,10 +1,12 @@
+<!-- 查询结果 -->
 
- <!-- 查询结果 -->
 <import src="/lib/wxParse/wxParse.wxml"/>
+<!-- 头部 -->
+<top-component></top-component>
 <!-- 左侧菜单 -->
 <menu-component ></menu-component>
 
-  <view class="header-line">查询结果</view>
+  <view class="result-line">查询结果</view>
 
   <view class='result-container'>
     <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
