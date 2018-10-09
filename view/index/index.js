@@ -303,13 +303,24 @@ Page({
       isScan: false
     });
 
+    var staffid = app.staffId;
+    var timestamp = Date.parse(new Date());
+    var nonce = parseInt(2147483647 * Math.random());
+    var query = 'serialNo' + that.data.numQuery;
+    var sign = utils.getSign(app.SignToken, timestamp, nonce, staffid, query, app.globalData.AppSecret);
+
     wx.request({
       url: app.globalData.WebUrl + 'Verify?b=' + num,
       method: 'GET',
       header: {
         //设置参数内容类型为x-www-form-urlencoded
         'content-type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'staffid': staffid,
+        'timestamp': timestamp,
+        'nonce': nonce,
+        'query': query,
+        'signature': sign,
       },
       success: function (res) {
         // success 
